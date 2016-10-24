@@ -1,0 +1,196 @@
+.timepicker {
+	font-size: 16px;
+	margin: 5px 0;
+	clear: both;
+    border: 1px solid #AAA/*	border: 1px solid #aaaaaa;*/;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    padding-top: 5px;
+}
+.timepicker table { 
+    width: 30%;
+    width: 25%;
+    margin: 0 auto;
+}
+.timepicker td {
+	vertical-align: middle;
+	width-: 10px;
+}
+.timepicker-input[type=text] {
+	border: 1px solid #999;
+	font-size: 16px;
+	width: 30px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.timepicker-up, .timepicker-down {
+	cursor: pointer;
+	border: 1px solid #999;
+	width: 30px;
+	height: 10px;
+}
+.timepicker-up {
+	border-bottom: 0;
+	border-radius: 6px 6px 0 0;
+	-moz-border-radius: 6px 6px 0 0;
+	-webkit-border-radius: 6px 6px 0 0;
+}
+.timepicker-down {
+	border-top: 0;
+	border-radius: 0 0 6px 6px;
+	-moz-border-radius: 0 0 6px 6px;
+	-webkit-border-radius: 0 0 6px 6px;
+	/*margin-top: -2px;*/
+}
+.timepicker-up-bg, .timepicker-down-bg {
+    width: 10px;
+	height: 10px;
+	background-image: url(Images/jquery/ui-icons_default.png);
+}
+.timepicker-up-bg {
+	background-position: 0 -18px;       
+	margin-left: 8px;
+	margin-top: -2px;
+}
+.timepicker-down-bg {
+	background-position: -64px -18px;       
+	margin-left: 7px;
+	/*margin-top: 2px;*/
+}
+
+.timepicker-ampm, .timepicker-ampm-active {
+    border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-size: 11px;
+	margin: 2px;
+	padding: 3px;
+	cursor: pointer;
+}
+    
+.timepicker-ampm {
+	background: #EBEFF1;
+	background: linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -webkit-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -moz-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -o-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -ms-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	border: 1px solid #EBEFF1;
+	color: #232B32;
+	font-weight: bold;
+}
+.timepicker-ampm-active {
+	background: #B6BFC9 !important;
+	background: linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -webkit-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -moz-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -o-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -ms-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	border: 1px solid #738f9d !important;
+	color: #FFFFFF !important;
+	font-weight: bold;
+}
+.timepicker-state-hover {
+	background: #F0B79E;
+	background: linear-gradient(top, #EEAC90 0, #F6D4C5 20%, #F2BDA6 50%, #EEA98C 80%, #F0B69D 100%) no-repeat;
+	background: -webkit-linear-gradient(top, #EEAC90 0, #F6D4C5 20%, #F2BDA6 50%, #EEA98C 80%, #F0B69D 100%) no-repeat;
+	background: -moz-linear-gradient(top, #EEAC90 0, #F6D4C5 20%, #F2BDA6 50%, #EEA98C 80%, #F0B69D 100%) no-repeat;
+	background: -o-linear-gradient(top, #EEAC90 0, #F6D4C5 20%, #F2BDA6 50%, #EEA98C 80%, #F0B69D 100%) no-repeat;
+	background: -ms-linear-gradient(top, #EEAC90 0, #F6D4C5 20%, #F2BDA6 50%, #EEA98C 80%, #F0B69D 100%) no-repeat;
+	background: linear-gradient(top, #EEAC90 0, #F6D4C5 20%, #F2BDA6 50%, #EEA98C 80%, #F0B69D 100%) no-repeat;
+	font-weight: normal;
+}
+.timepicker-state-hover .timepicker-up-bg, .timepicker-state-hover .timepicker-down-bg {
+	background-image: url(Images/jquery/ui-icons_hover.png); 
+}
+
+/******************************  calendar week-end  ********************************/
+.ccs-calendar-week-end .ui-datepicker-week-end .ui-state-default {
+	background: #d4d7d9;
+	background: linear-gradient(top, #e6e6e6 0, #8a9aa6 100%) no-repeat;
+	background: -webkit-linear-gradient(top, #e6e6e6 0, #8a9aa6 100%) no-repeat;
+	background: -moz-linear-gradient(top, #e6e6e6 0, #8a9aa6 100%) no-repeat;
+	background: -o-linear-gradient(top, #e6e6e6 0, #8a9aa6 100%) no-repeat;
+	background: -ms-linear-gradient(top, #e6e6e6 0, #8a9aa6 100%) no-repeat;
+	background: linear-gradient(top, #e6e6e6 0, #8a9aa6 100%) no-repeat;
+	border: 1px solid #EBEFF1;
+	color: #28313a;
+}
+
+.ccs-calendar-week-end .ui-datepicker-week-end .ui-state-hover {
+	background: #BDC9D1;
+	background: linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -webkit-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -moz-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -o-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -ms-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	border: 1px solid #EBEFF1;
+	color: #252E35;
+}
+
+/**********************************************************************************/
+.ccs-calendar .ui-state-default,
+.ccs-calendar .ui-widget-content .ui-state-default,
+.ccs-calendar .ui-widget-header .ui-state-default {
+	background: #EBEFF1;
+	background: linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -webkit-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -moz-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -o-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: -ms-linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	background: linear-gradient(top, #FFFFFF 0, #99ABB8 100%) no-repeat;
+	border: 1px solid #EBEFF1;
+	color: #232B32;
+}
+
+.ccs-calendar .ui-state-hover,
+.ccs-calendar .ui-widget-content .ui-state-hover,
+.ccs-calendar .ui-widget-header .ui-state-hover,
+.ccs-calendar .ui-state-focus,
+.ccs-calendar .ui-widget-content .ui-state-focus,
+.ccs-calendar .ui-widget-header .ui-state-focus {
+	background: #BDC9D1;
+	background: linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -webkit-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -moz-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -o-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: -ms-linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	background: linear-gradient(top, #EDF0F2 0, #8DA1B0 100%) no-repeat;
+	border: 1px solid #EBEFF1;
+	color: #252E35;
+}
+
+/* active */
+.ccs-calendar .ui-state-active,
+.ccs-calendar .ui-widget-content .ui-state-active,
+.ccs-calendar .ui-widget-header .ui-state-active {
+	background: #B6BFC9 !important;
+	background: linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -webkit-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -moz-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -o-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -ms-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	border: 1px solid #738f9d !important;
+	color: #FFFFFF !important;
+}
+
+/* today */
+.ccs-calendar .ui-state-highlight,
+.ccs-calendar .ui-widget-content .ui-state-highlight,
+.ccs-calendar .ui-widget-header .ui-state-highlight {
+/*	background: #B6BFC9 !important;
+	background: linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -webkit-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -moz-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -o-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: -ms-linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;
+	background: linear-gradient(top, #E5E8EB 0, #8796A6 100%) no-repeat !important;*/
+	border: 1px solid #738f9d !important;
+/*	color: #FFFFFF !important;*/
+}

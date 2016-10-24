@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+
+<!-- BEGIN Panel Head -->
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Usuario</title>
+<!-- END Panel Head -->
+<!-- BEGIN Panel Content -->
+<!-- BEGIN Record usuario -->
+<form id="Contentusuario" method="post" action="{Action}" name="{HTMLFormName}">
+  <h2>Agregar/Editar Usuario </h2>
+ 
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="ContentusuarioErrorBlock">
+      <td colspan="2">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td><label for="Contentusuarionombre_usuario">Nombre Usuario</label></td> 
+      <td><input type="text" name="{nombre_usuario_Name}" value="{nombre_usuario}" maxlength="50" size="50" id="Contentusuarionombre_usuario"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentusuariousuario1">Usuario</label></td> 
+      <td><input type="text" name="{usuario1_Name}" value="{usuario1}" maxlength="50" size="50" id="Contentusuariousuario1"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentusuariopassword">Password</label></td> 
+      <td><input type="text" name="{password_Name}" value="{password}" maxlength="50" size="50" id="Contentusuariopassword"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentusuarionivel">Nivel</label></td> 
+      <td><input type="text" name="{nivel_Name}" value="{nivel}" maxlength="5" size="5" id="Contentusuarionivel"></td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="2" style="text-align: right">
+        <!-- BEGIN Button Button_Insert --><input name="{Button_Name}" type="submit" value="Agregar" alt="Agregar" id="ContentusuarioButton_Insert" class="Button"><!-- END Button Button_Insert -->
+        <!-- BEGIN Button Button_Update --><input name="{Button_Name}" type="submit" value="Enviar" alt="Enviar" id="ContentusuarioButton_Update" class="Button"><!-- END Button Button_Update -->
+        <!-- BEGIN Button Button_Delete --><input name="{Button_Name}" type="submit" value="Borrar" alt="Borrar" id="ContentusuarioButton_Delete" class="Button"><!-- END Button Button_Delete --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record usuario --><br>
+<!-- END Panel Content -->
+<!-- BEGIN Panel Menu -->{MenuIncludablePage}<!-- END Panel Menu -->
+<!-- BEGIN Panel Sidebar1 -->&nbsp;<!-- END Panel Sidebar1 -->
+<!-- BEGIN Panel HeaderSidebar -->&nbsp;<!-- END Panel HeaderSidebar -->

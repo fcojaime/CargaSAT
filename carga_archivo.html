@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>carga_archivo</title>
+<meta name="GENERATOR" content="CodeCharge Studio 5.1.1.18990">
+<script src="tabber.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="example.css" media="screen">
+<link rel="stylesheet" type="text/css" href="example-print.css" media="print">
+<script type="text/javascript">
+
+/* Optional: Temporarily hide the "tabber" class so it does not "flash"
+   on the page as plain HTML. After tabber runs, the class is changed
+   to "tabberlive" and it will appear. */
+
+document.write('<style type="text/css">.tabber{display:none;}<\/style>');
+</script>
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_doctype.css">
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/jquery-ui.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+//Include Common JSFunctions @1-2504AB44
+</script>
+<script src="ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-A87AC9EE
+</script>
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+//Common Script Start @1-8BFA436B
+jQuery(function ($) {
+    var features = { };
+    var actions = { };
+    var params = { };
+//End Common Script Start
+
+//NewRecord1Button_InsertOnClick Event Start @-15C4F73E
+    actions["NewRecord1Button_InsertOnClick"] = function (eventType, parameters) {
+        var result = true;
+//End NewRecord1Button_InsertOnClick Event Start
+
+//Custom Code @34-2A29BDB7
+        // -------------------------
+        // Write your own code here.
+        NewRecord1.id_reg_ok.value=0;  
+       
+       document.getElementById("imgcarg").style.display = "inline";
+       var archivo_excel= NewRecord1.archivo_excel.value;
+       var periodo= NewRecord1.ListBox1.value;
+       var opcion1=NewRecord1.optsla[0].checked;
+        var opcion2=NewRecord1.optsla[1].checked;
+     // if( archivo_excel<>"" && periodo<>"" && (opcion1==true || opcion2==true))  
+      
+      // if( archivo_excel!=" " )   
+        //alert("La carga empezará ahora"+archivo_excel+","+periodo+" , opc "+opciones);
+
+        
+         
+            
+                
+        // -------------------------
+//End Custom Code
+
+//NewRecord1Button_InsertOnClick Event End @-A5B9ECB8
+        return result;
+    };
+//End NewRecord1Button_InsertOnClick Event End
+
+//Event Binding @1-A18C3A75
+    $('*:ccsControl(NewRecord1, Button_Insert)').ccsBind(function() {
+        this.bind("click", actions["NewRecord1Button_InsertOnClick"]);
+    });
+//End Event Binding
+
+//Plugin Calls @1-A6BB8C4C
+    $('*:ccsControl(NewRecord1, Button_Delete)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+    $('*:ccsControl(NewRecord1, Button_Cancel)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+//End Plugin Calls
+
+//Common Script End @1-562554DE
+});
+//End Common Script End
+
+
+//End CCS script
+</script>
+</head>
+<body>
+{Header} 
+<!-- BEGIN Record NewRecord1 -->
+<form id="NewRecord1" style="BACKGROUND-COLOR: rgb(242,242,243)" enctype="{HTMLFormEnctype}" method="post" name="{HTMLFormName}" action="{Action}">
+  <table cellspacing="0" cellpadding="0" align="center" border="0" whidth="800">
+    <tr>
+      <td whidth="800">
+        <h1><br>
+        Carga de Mediciones SAT</h1>
+ </td> 
+    </tr>
+ 
+  </table>
+ {lnom_cds} <br>
+  <br>
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="{@error-block}">
+      <td colspan="2">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td>Seleccione un archivo</td> 
+      <td>&nbsp; 
+        <!-- BEGIN FileUpload archivo_excel --><input type="hidden" id="NewRecord1archivo_excelControlName" value="{State}" name="{ControlName}">
+        <!-- BEGIN Info -->&nbsp;{FileName}&nbsp;{FileSize}&nbsp;bytes.<!-- END Info -->
+        <!-- BEGIN Upload --><label style="display: none;" for="NewRecord1archivo_excelFileControl">File upload</label><input type="file" id="NewRecord1archivo_excelFileControl" name="{FileControl}"><!-- END Upload -->
+        <!-- BEGIN DeleteControl --><label for="NewRecord1archivo_excelDeleteControl">Borrar</label><input type="checkbox" id="NewRecord1archivo_excelDeleteControl" name="{DeleteControl}" {DeleteChecked}><!-- END DeleteControl --><!-- END FileUpload archivo_excel --></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="NewRecord1ListBox1">Seleccione periodo de carga</label></td> 
+      <td>&nbsp; 
+        <select id="NewRecord1ListBox1" name="{ListBox1_Name}">
+          <option selected value="">Seleccionar Valor</option>
+ {ListBox1_Options} 
+        </select>
+ <input type="hidden" id="NewRecord1ruta_archivo" value="{ruta_archivo}" name="{ruta_archivo_Name}"></td> 
+    </tr>
+ 
+    <tr>
+      <td style="TEXT-ALIGN: center" colspan="2">
+        <!-- BEGIN RadioButton optsla --><input type="radio" id="NewRecord1optsla_{optsla:optionNumber}" value="{Value}" name="{optsla_Name}" {Check}><label for="NewRecord1optsla_{optsla:optionNumber}">{Description}</label><!-- END RadioButton optsla -->&nbsp;&nbsp;</td> 
+    </tr>
+ 
+    <tr>
+      <td style="TEXT-ALIGN: right" colspan="2">
+        <!-- BEGIN Button Button_Insert --><input type="submit" id="NewRecord1Button_Insert" class="Button" alt="Agregar" value="Agregar" name="{Button_Name}"><!-- END Button Button_Insert -->
+        <!-- BEGIN Button Button_Update --><input type="submit" id="NewRecord1Button_Update" class="Button" alt="Enviar" value="Enviar" name="{Button_Name}"><!-- END Button Button_Update -->
+        <!-- BEGIN Button Button_Delete --><input type="submit" id="NewRecord1Button_Delete" class="Button" alt="Borrar" value="Borrar" name="{Button_Name}"><!-- END Button Button_Delete -->
+        <!-- BEGIN Button Button_Cancel --><input type="submit" id="NewRecord1Button_Cancel" class="Button" alt="Cancelar" value="Cancelar" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+    </tr>
+ 
+  </table>
+ <br>
+  <input type="hidden" id="NewRecord1id_reg_ok" value="{id_reg_ok}" name="{id_reg_ok_Name}"><br>
+  <table width="80%">
+    <tr>
+      <td align="center">
+        <div id="imgcarg" style="DISPLAY: none">
+          <img alt="" src="./images/cargando.gif">
+        </div>
+ 
+        <!-- BEGIN Image img_cargando --><img id="NewRecord1img_cargando" style="DISPLAY: none" alt="" src="{img_cargando}"><!-- END Image img_cargando --></td> 
+    </tr>
+ 
+  </table>
+ {Label3}<br>
+  <div class="tabber">
+    {Label1} 
+  </div>
+ <br>
+  {Label2} <br>
+  {Label4} 
+  <div>
+  </div>
+ 
+  <!-- BEGIN Button Aplicar --><input type="submit" id="NewRecord1Aplicar" class="Button" alt="Aplicar" value="Aplicar" name="{Button_Name}"><!-- END Button Aplicar -->
+</form>
+<!-- END Record NewRecord1 --></body>
+</html>

@@ -1,0 +1,1562 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>historico_cargas_rs</title>
+<meta name="GENERATOR" content="CodeCharge Studio 5.1.1.18990">
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_doctype.css" />
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_Components_doctype.css" />
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-2504AB44
+</script>
+<script src="ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//End Include Common JSFunctions
+
+  </script>
+
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/ccs-jquery-ui-calendar.css" />
+
+<script type="text/javascript">
+
+//Include User Scripts @1-A87AC9EE
+</script>
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+//Common Script Start @1-8BFA436B
+jQuery(function ($) {
+    var features = { };
+    var actions = { };
+    var params = { };
+//End Common Script Start
+
+//ImprimirOnClick Event Start @-EAE0DE14
+    actions["ImprimirOnClick"] = function (eventType, parameters) {
+        var result = true;
+//End ImprimirOnClick Event Start
+
+//Custom Code @538-2A29BDB7
+        // -------------------------
+        // Write your own code here.
+        window.print();
+
+        // -------------------------
+//End Custom Code
+
+//ImprimirOnClick Event End @-A5B9ECB8
+        return result;
+    };
+//End ImprimirOnClick Event End
+
+//Event Binding @1-CEB2F32A
+    $('*:ccsControl(Imprimir)').ccsBind(function() {
+        this.bind("click", actions["ImprimirOnClick"]);
+    });
+//End Event Binding
+
+//Plugin Calls @1-403A4754
+    $('*:ccsControl(Imprimir)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+//End Plugin Calls
+
+//Common Script End @1-562554DE
+});
+//End Common Script End
+//End CCS script
+</script>
+<script type="text/javascript">
+
+/* Optional: Temporarily hide the "tabber" class so it does not "flash"
+   on the page as plain HTML. After tabber runs, the class is changed
+   to "tabberlive" and it will appear. */
+
+document.write('<style type="text/css">.tabber{display:none;}<\/style>');
+
+/*==================================================
+  Set the tabber options (must do this before including tabber.js)
+  ==================================================*/
+var tabberOptions = {
+
+  'cookie':"tabber", /* Name to use for the cookie */
+
+  'onLoad': function(argsObj)
+  {
+    var t = argsObj.tabber;
+    var i;
+
+    /* Optional: Add the id of the tabber to the cookie name to allow
+       for multiple tabber interfaces on the site.  If you have
+       multiple tabber interfaces (even on different pages) I suggest
+       setting a unique id on each one, to avoid having the cookie set
+       the wrong tab.
+    */
+    if (t.id) {
+      t.cookie = t.id + t.cookie;
+    }
+
+    /* If a cookie was previously set, restore the active tab */
+    i = parseInt(getCookie(t.cookie));
+    if (isNaN(i)) { return; }
+    t.tabShow(i);
+   // alert('getCookie(' + t.cookie + ') = ' + i);
+  },
+
+  'onClick':function(argsObj)
+  {
+    var c = argsObj.tabber.cookie;
+    var i = argsObj.index;
+    //alert('setCookie(' + c + ',' + i + ')');
+    setCookie(c, i);
+  }
+};
+
+/*==================================================
+  Cookie functions
+  ==================================================*/
+function setCookie(name, value, expires, path, domain, secure) {
+    document.cookie= name + "=" + escape(value) +
+        ((expires) ? "; expires=" + expires.toGMTString() : "") +
+        ((path) ? "; path=" + path : "") +
+        ((domain) ? "; domain=" + domain : "") +
+        ((secure) ? "; secure" : "");
+}
+
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    } else {
+        begin += 2;
+    }
+    var end = document.cookie.indexOf(";", begin);
+    if (end == -1) {
+        end = dc.length;
+    }
+    return unescape(dc.substring(begin + prefix.length, end));
+}
+function deleteCookie(name, path, domain) {
+    if (getCookie(name)) {
+        document.cookie = name + "=" +
+            ((path) ? "; path=" + path : "") +
+            ((domain) ? "; domain=" + domain : "") +
+            "; expires=Thu, 01-Jan-70 00:00:01 GMT";
+    }
+}
+
+</script>
+<link rel="stylesheet" type="text/css" href="Styles/Austere4/Style_Components_doctype.css" />
+<script src="tabber.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="example.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="example-print.css" media="print" />
+<link rel="stylesheet" type="text/css" href="Styles/Austere4/jquery-ui.css" />
+</head>
+<body>
+{Header} <br>
+<!-- BEGIN Record l_calificacion_incidentes1 -->
+<form id="l_calificacion_incidentes1" method="post" name="{HTMLFormName}" action="{Action}" 
+style="BACKGROUND-COLOR: rgb(242,242,243)">
+  <table border="0" cellspacing="0" cellpadding="0" align="center" whidth="800">
+    <tr>
+      <td whidth="800">
+        <h1>Histórico de Cargas</h1>
+ </td> 
+    </tr>
+ 
+  </table>
+ 
+  <table class="MainTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            <td class="thAustere4"><strong>Buscar</strong></td> 
+            <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+          </tr>
+ 
+        </table>
+ 
+        <table class="RecordAustere4" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr id="{@error-block}" class="ErrorAustere4">
+            <td colspan="2">{Error}</td> 
+          </tr>
+ <!-- END Error -->
+          <tr class="ControlsAustere4">
+            <td class="thAustere4" colspan="2">&nbsp;Indique todos los parámetros de búsqueda&nbsp;</td> 
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="l_calificacion_incidentes1s_id_proveedor">CDS</label></td> 
+            <td>
+              <select id="l_calificacion_incidentes1s_id_proveedor" name="{s_id_proveedor_Name}">
+                <option selected value="">Seleccionar Valor</option>
+ {s_id_proveedor_Options} 
+              </select>
+ {Label1} </td> 
+          </tr>
+ 
+          <tr class="BottomAustere4">
+            <td style="TEXT-ALIGN: left"><label for="l_calificacion_incidentes1s_id_periodo" style="display: inline;">Periodo de Cargas</label> </td> 
+            <td style="TEXT-ALIGN: left">
+              <select id="l_calificacion_incidentes1s_id_periodo" name="{s_id_periodo_Name}">
+                <option selected value="">Seleccionar Valor</option>
+ {s_id_periodo_Options} 
+              </select>
+ &nbsp;</td> 
+          </tr>
+ 
+          <tr class="BottomAustere4">
+            <td style="TEXT-ALIGN: left"><font style="BACKGROUND-COLOR: #ffffff">Tipo de Nivel de Servicio</font>&nbsp; </td> 
+            <td style="TEXT-ALIGN: left">
+              <select id="l_calificacion_incidentes1s_opt_slas" name="{s_opt_slas_Name}">
+                <option selected value="">Seleccionar Valor</option>
+ {s_opt_slas_Options} 
+              </select>
+ &nbsp;</td> 
+          </tr>
+ 
+          <tr class="BottomAustere4">
+            <td style="TEXT-ALIGN: right" colspan="2">
+              <!-- BEGIN Button Button_DoSearch --><input type="submit" id="l_calificacion_incidentes1Button_DoSearch" class="ButtonAustere4" value="Buscar" alt="Buscar" name="{Button_Name}"><!-- END Button Button_DoSearch --></td> 
+          </tr>
+ 
+        </table>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td>{lb_periodo_fecha_carga2} {lb_nom_periodo}</td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record l_calificacion_incidentes1 --><br>
+<div>
+  <table>
+    <tr>
+      <td style="TEXT-ALIGN: center">{lb_periodo_fecha_carga} </td> 
+    </tr>
+ 
+  </table>
+</div>
+<div class="tabber">
+  <div id="0" class="tabbertab">
+    <h2>Resumen </h2>
+ 
+    <div style="DISPLAY: none">
+      {lb_resumen} 
+    </div>
+ 
+    <table>
+      <tr>
+        <td style="VERTICAL-ALIGN: top">
+          <!-- BEGIN Grid resumen -->
+          <table id="resumen" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top">
+                <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+                    <td class="thAustere4"><strong>Resumen de Carga de Archivos</strong></td> 
+                    <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+                  </tr>
+ 
+                </table>
+ 
+                <table class="GridAustere4" cellspacing="0" cellpadding="0">
+                  <tr class="RowAustere4">
+                    <td colspan="2">Total de Registros:&nbsp;{resumen_TotalRecords}</td> 
+                  </tr>
+ 
+                  <tr class="CaptionAustere4">
+                    <th scope="col">
+                    <!-- BEGIN Sorter Sorter_Medicion --><span class="Sorter">Medición 
+                    <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+                    <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="resumenSorter_Medicion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+                    <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+                    <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="resumenSorter_Medicion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_Medicion --></th>
+ 
+                    <th scope="col">
+                    <!-- BEGIN Sorter Sorter_Total --><span class="Sorter">Total 
+                    <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+                    <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="resumenSorter_Total"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+                    <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+                    <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="resumenSorter_Total"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_Total --></th>
+ 
+                  </tr>
+ 
+                  <!-- BEGIN Row -->
+                  <tr class="RowAustere4">
+                    <td>{Medicion}</td> 
+                    <td style="TEXT-ALIGN: right">{Total}</td> 
+                  </tr>
+ <!-- END Row -->
+                  <!-- BEGIN NoRecords -->
+                  <tr class="NoRecordsAustere4">
+                    <td colspan="2">No hay registros</td> 
+                  </tr>
+ <!-- END NoRecords -->
+                  <tr class="FooterAustere4">
+                    <td colspan="2">
+                      <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                      <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                        <option selected value="">-</option>
+ {PageSize_Options} 
+                      </select>
+ 
+                      <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/Austere4/Images/First.gif"></a> <!-- END First_On -->
+                      <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/Austere4/Images/FirstOff.gif"><!-- END First_Off -->
+                      <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/Austere4/Images/Prev.gif"></a> <!-- END Prev_On -->
+                      <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/Austere4/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                      <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/Austere4/Images/Next.gif"></a> <!-- END Next_On -->
+                      <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/Austere4/Images/NextOff.gif"><!-- END Next_Off -->
+                      <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/Austere4/Images/Last.gif"></a> <!-- END Last_On -->
+                      <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/Austere4/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+                  </tr>
+ 
+                </table>
+ </td> 
+            </tr>
+ 
+          </table>
+ <!-- END Grid resumen --><br>
+          {lb_efic_presup} <br>
+          <br>
+          <br>
+          <!-- BEGIN Button Imprimir --><input type="button" id="Imprimir" class="Button" value="Imprimir" alt="Imprimir" name="{Button_Name}"><!-- END Button Imprimir --></td> 
+        <td>
+          <!-- BEGIN Grid Grid1 -->
+          <table id="Grid1" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top">
+                <table class="Header" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td class="HeaderLeft"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+                    <td class="th"><strong>Resumen de Niveles de Servicio </strong></td> 
+                    <td class="HeaderRight"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+                  </tr>
+ 
+                </table>
+ 
+                <table class="Grid" cellspacing="0" cellpadding="0">
+                  <tr class="Caption">
+                    <th scope="col">Servicio </th>
+ 
+                    <th scope="col">Uso de una<br>
+                    Herramienta<br>
+                    para Estimación<br>
+                    de Costo<br>
+                    y Tiempos </th>
+ 
+                    <th scope="col">Requisitos<br>
+                    de Servicio </th>
+ 
+                    <th scope="col">Cumplimiento en<br>
+                    Requisitos<br>
+                    Funcionales </th>
+ 
+                    <th scope="col">Calidad de<br>
+                    Productos<br>
+                    Terminados </th>
+ 
+                    <th scope="col">Retraso en<br>
+                    Entregables </th>
+ 
+                    <th scope="col">Calidad<br>
+                    de Código </th>
+ 
+                    <th scope="col">Defectos Fugados<br>
+                    al Ambiente<br>
+                    Productivo </th>
+ 
+                    <th scope="col">Manejo de<br>
+                    Incidentes<br>
+                    Tiempo de<br>
+                    Atención</th>
+ 
+                    <th scope="col">Manejo de<br>
+                    Incidentes<br>
+                    Tiempo de<br>
+                    Solución</th>
+ 
+                    <th scope="col">&nbsp;Eficiencia<br>
+                    Presupuestal</th>
+ 
+                  </tr>
+ 
+                  <!-- BEGIN Row -->
+                  <tr class="Row">
+                    <td>{descripcion}&nbsp;</td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgherr_est_cost_{Grid1:rowNumber}" alt="" src="{imgherr_est_cost}"><br>
+                      {cumplenherr_est_cost}&nbsp;{totherr_est_cost}&nbsp;{herr_est_cost}<input type="hidden" id="Grid1meta_herr_est_cost_{Grid1:rowNumber}" value="{meta_herr_est_cost}" name="{meta_herr_est_cost_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgreq_serv_{Grid1:rowNumber}" alt="" src="{imgreq_serv}"><br>
+                      {cumplenreq_serv}&nbsp;{totreq_serv}&nbsp;{req_serv}<input type="hidden" id="Grid1meta_req_serv_{Grid1:rowNumber}" value="{meta_req_serv}" name="{meta_req_serv_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgcumpl_req_func_{Grid1:rowNumber}" alt="" src="{imgcumpl_req_func}"><br>
+                      {cumplencumpl_req_func}&nbsp;{totcumpl_req_func}&nbsp;{cumpl_req_func}<input type="hidden" id="Grid1meta_cumpl_req_func_{Grid1:rowNumber}" value="{meta_cumpl_req_func}" name="{meta_cumpl_req_func_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgcalidad_prod_term_{Grid1:rowNumber}" alt="" src="{imgcalidad_prod_term}"><br>
+                      {cumplencalidad_prod_term}&nbsp;{totcalidad_prod_term}&nbsp;{calidad_prod_term}<input type="hidden" id="Grid1meta_calidad_prod_term_{Grid1:rowNumber}" value="{meta_calidad_prod_term}" name="{meta_calidad_prod_term_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgretr_entregable_{Grid1:rowNumber}" alt="" src="{imgretr_entregable}"><br>
+                      {cumplenretr_entregable}&nbsp;{totretr_entregable}&nbsp;{retr_entregable}<input type="hidden" id="Grid1meta_retr_entregable_{Grid1:rowNumber}" value="{meta_retr_entregable}" name="{meta_retr_entregable_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgcal_cod_{Grid1:rowNumber}" alt="" src="{imgcal_cod}"><br>
+                      {cumplencal_cod}&nbsp;{totcal_cod}&nbsp;{cal_cod}<input type="hidden" id="Grid1meta_cal_cod_{Grid1:rowNumber}" value="{meta_cal_cod}" name="{meta_cal_cod_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgdef_fug_amb_prod_{Grid1:rowNumber}" alt="" src="{imgdef_fug_amb_prod}"><br>
+                      {cumplendef_fug_amb_prod}&nbsp;{totdef_fug_amb_prod}&nbsp;{def_fug_amb_prod}<input type="hidden" id="Grid1meta_def_fug_amb_prod_{Grid1:rowNumber}" value="{meta_def_fug_amb_prod}" name="{meta_def_fug_amb_prod_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imginc_tiempoasignacion_{Grid1:rowNumber}" alt="" src="{imginc_tiempoasignacion}"><br>
+                      {cumpleninc_tiempoasignacion}&nbsp;{totinc_tiempoasignacion}&nbsp;{inc_tiempoasignacion}&nbsp;<input type="hidden" id="Grid1meta_inc_tiempoasignacion_{Grid1:rowNumber}" value="{meta_inc_tiempoasignacion}" name="{meta_inc_tiempoasignacion_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imginc_tiemposolucion_{Grid1:rowNumber}" alt="" src="{imginc_tiemposolucion}"><br>
+                      {cumpleninc_tiemposolucion}&nbsp;{totinc_tiemposolucion}&nbsp;{inc_tiemposolucion}&nbsp;<input type="hidden" id="Grid1meta_inc_tiemposolucion_{Grid1:rowNumber}" value="{meta_inc_tiemposolucion}" name="{meta_inc_tiemposolucion_Name}"></td> 
+                    <td style="TEXT-ALIGN: center"><img id="Grid1imgefic_presup_{Grid1:rowNumber}" alt="" src="{imgefic_presup}"><br>
+                      {cumplenefic_presup}&nbsp;{totefic_presup}&nbsp;{efic_presup}&nbsp;<input type="hidden" id="Grid1meta_efic_presup_{Grid1:rowNumber}" value="{meta_efic_presup}" name="{meta_efic_presup_Name}"></td> 
+                  </tr>
+ <!-- END Row -->
+                  <!-- BEGIN NoRecords -->
+                  <tr class="NoRecords">
+                    <td colspan="11">No hay registros</td> 
+                  </tr>
+ <!-- END NoRecords -->
+                  <tr class="Footer">
+                    <td colspan="11">
+                      <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                      <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                        <option selected value="">-</option>
+ {PageSize_Options} 
+                      </select>
+ 
+                      <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/{CCS_Style}/Images/First.gif"></a> <!-- END First_On -->
+                      <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/{CCS_Style}/Images/FirstOff.gif"><!-- END First_Off -->
+                      <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/{CCS_Style}/Images/Prev.gif"></a> <!-- END Prev_On -->
+                      <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/{CCS_Style}/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                      <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/{CCS_Style}/Images/Next.gif"></a> <!-- END Next_On -->
+                      <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/{CCS_Style}/Images/NextOff.gif"><!-- END Next_Off -->
+                      <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/{CCS_Style}/Images/Last.gif"></a> <!-- END Last_On -->
+                      <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/{CCS_Style}/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+                  </tr>
+ 
+                </table>
+ </td> 
+            </tr>
+ 
+          </table>
+ <!-- END Grid Grid1 --></td> 
+      </tr>
+ 
+    </table>
+ <br>
+  </div>
+ 
+  <div id="1" class="tabbertab">
+    <h2>Detalle Incidentes NS </h2>
+ 
+    <!-- BEGIN Grid l_calificacion_incidentes -->
+    <table id="l_calificacion_incidentes" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top">
+          <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+              <td class="thAustere4"><strong>Detalle de&nbsp;Incidentes </strong></td> 
+              <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            </tr>
+ 
+          </table>
+ 
+          <table class="GridAustere4" cellspacing="0" cellpadding="0">
+            <tr class="RowAustere4">
+              <td colspan="10">Total de Registros:&nbsp;{l_calificacion_incidentes_TotalRecords}</td> 
+            </tr>
+ 
+            <tr class="CaptionAustere4">
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_contador --><span class="Sorter">Contador 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_contador"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_contador"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_contador --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_incidencia --><span class="Sorter">Id Incidencia 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_id_incidencia"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_id_incidencia"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_incidencia --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_servicio_de_negocio --><span class="Sorter">Servicio De Negocio 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_servicio_de_negocio"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_servicio_de_negocio"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_servicio_de_negocio --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_nombre_del_producto --><span class="Sorter">Nombre Del Producto 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_nombre_del_producto"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_nombre_del_producto"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_nombre_del_producto --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_severidad --><span class="Sorter">Severidad 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_severidad"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_severidad"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_severidad --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_Cumple_Inc_TiempoAsignacion --><span class="Sorter">Cumple Inc Tiempo Asignación 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_Cumple_Inc_TiempoAsignacion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_Cumple_Inc_TiempoAsignacion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_Cumple_Inc_TiempoAsignacion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_Cumple_Inc_TiempoSolucion --><span class="Sorter">Cumple Inc Tiempo Solución 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_Cumple_Inc_TiempoSolucion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_Cumple_Inc_TiempoSolucion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_Cumple_Inc_TiempoSolucion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_Obs_Proceso --><span class="Sorter">Obs Proceso 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_incidentesSorter_Obs_Proceso"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_incidentesSorter_Obs_Proceso"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_Obs_Proceso --></th>
+ 
+              <th scope="col"></th>
+ 
+              <th scope="col"></th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr class="RowAustere4">
+              <td style="TEXT-ALIGN: center">{contador}</td> 
+              <td>{id_incidencia}</td> 
+              <td>{servicio_de_negocio}</td> 
+              <td>{nombre_del_producto}</td> 
+              <td style="TEXT-ALIGN: center">{severidad}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_incidentesCumple_Inc_TiempoAsignacion_{l_calificacion_incidentes:rowNumber}" alt="" src="{Cumple_Inc_TiempoAsignacion}">{lb_Cumple_In_TiempoAsignacion}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_incidentesCumple_Inc_TiempoSolucion_{l_calificacion_incidentes:rowNumber}" alt="" src="{Cumple_Inc_TiempoSolucion}">{lb_Cumple_Inc_TiempoSolucion}</td> 
+              <td>{Obs_Proceso}</td> 
+              <td style="TEXT-ALIGN: center"></td> 
+              <td style="TEXT-ALIGN: center"></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr class="NoRecordsAustere4">
+              <td colspan="10">No hay registros</td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr class="FooterAustere4">
+              <td colspan="10">
+                <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                  <option selected value="">-</option>
+ {PageSize_Options} 
+                </select>
+ 
+                <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/Austere4/Images/First.gif"></a> <!-- END First_On -->
+                <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/Austere4/Images/FirstOff.gif"><!-- END First_Off -->
+                <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/Austere4/Images/Prev.gif"></a> <!-- END Prev_On -->
+                <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/Austere4/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/Austere4/Images/Next.gif"></a> <!-- END Next_On -->
+                <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/Austere4/Images/NextOff.gif"><!-- END Next_Off -->
+                <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/Austere4/Images/Last.gif"></a> <!-- END Last_On -->
+                <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/Austere4/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Grid l_calificacion_incidentes --><br>
+    <br>
+  </div>
+ 
+  <div id="3" class="tabbertab">
+    <h2>Detalle de Medición - Apertura</h2>
+ 
+    <!-- BEGIN Grid l_detalle_medicion_apertu -->
+    <table id="l_detalle_medicion_apertu" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top">
+          <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+              <td class="thAustere4"><strong>&nbsp;Detalle&nbsp;de&nbsp;Medición de Requerimientos de&nbsp;Apertura </strong></td> 
+              <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            </tr>
+ 
+          </table>
+ 
+          <table class="GridAustere4" cellspacing="0" cellpadding="0">
+            <tr class="RowAustere4">
+              <td colspan="21">Total de Registros:&nbsp;{l_detalle_medicion_apertu_TotalRecords}</td> 
+            </tr>
+ 
+            <tr class="CaptionAustere4">
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_contador --><span class="Sorter">Contador 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_contador"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_contador"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_contador --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_servicio_negocio --><span class="Sorter">Servicio Negocio 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_servicio_negocio"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_servicio_negocio"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_servicio_negocio --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_ppmc --><span class="Sorter">Id Ppmc 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_id_ppmc"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_id_ppmc"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_ppmc --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_estimacion --><span class="Sorter">Id Estimación 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_id_estimacion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_id_estimacion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_estimacion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_descripcion --><span class="Sorter">Descripción 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_descripcion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_descripcion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_descripcion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_herr_est_cost --><span class="Sorter">Herr Est Cost 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_herr_est_cost"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_herr_est_cost"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_herr_est_cost --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_req_serv --><span class="Sorter">Req Serv 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_req_serv"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_req_serv"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_req_serv --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_fecha_asignacion --><span class="Sorter">Fecha Asignación 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_fecha_asignacion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_fecha_asignacion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_fecha_asignacion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_fecha_entrega_prop --><span class="Sorter">Fecha Entrega Prop 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_fecha_entrega_prop"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_fecha_entrega_prop"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_fecha_entrega_prop --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_fecha_acepta_prop --><span class="Sorter">Fecha Acepta Prop 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_fecha_acepta_prop"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_fecha_acepta_prop"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_fecha_acepta_prop --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_horas_aprobadas --><span class="Sorter">Horas Aprobadas 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_horas_aprobadas"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_horas_aprobadas"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_horas_aprobadas --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_tiempo_limite_entrega_prop --><span class="Sorter">Tiempo Limite Entrega Prop 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_tiempo_limite_entrega_prop"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_tiempo_limite_entrega_prop"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_tiempo_limite_entrega_prop --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_observaciones --><span class="Sorter">Observaciones 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_observaciones"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_observaciones"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_observaciones --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_tipo --><span class="Sorter">Tipo 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_tipo"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_tipo"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_tipo --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_serv_contractual --><span class="Sorter">Serv Contractual 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_serv_contractual"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_serv_contractual"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_serv_contractual --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_total_unidades --><span class="Sorter">Total Unidades 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_total_unidades"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_total_unidades"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_total_unidades --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_tipo_unidades --><span class="Sorter">Tipo Unidades 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_tipo_unidades"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_tipo_unidades"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_tipo_unidades --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_ppmc_padre --><span class="Sorter">Ppmc Padre 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_ppmc_padre"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_ppmc_padre"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_ppmc_padre --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_tipo_padre --><span class="Sorter">Tipo Padre 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_apertuSorter_tipo_padre"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_apertuSorter_tipo_padre"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_tipo_padre --></th>
+ 
+              <th scope="col"></th>
+ 
+              <th style="TEXT-ALIGN: center" scope="col"></th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr class="RowAustere4">
+              <td style="TEXT-ALIGN: center">{contador}</td> 
+              <td>{servicio_negocio}</td> 
+              <td style="TEXT-ALIGN: center">{id_ppmc}</td> 
+              <td style="TEXT-ALIGN: center">{id_estimacion}</td> 
+              <td>{descripcion}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_apertuherr_est_cost_{l_detalle_medicion_apertu:rowNumber}" alt="" src="{herr_est_cost}">{lb_apert_herr_est_cost}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_apertureq_serv_{l_detalle_medicion_apertu:rowNumber}" alt="" src="{req_serv}">{lb_apert_req_serv}</td> 
+              <td style="TEXT-ALIGN: center">{fecha_asignacion}</td> 
+              <td style="TEXT-ALIGN: center">{fecha_entrega_prop}</td> 
+              <td style="TEXT-ALIGN: center">{fecha_acepta_prop}</td> 
+              <td style="TEXT-ALIGN: center">{horas_aprobadas}</td> 
+              <td style="TEXT-ALIGN: center">{tiempo_limite_entrega_prop}</td> 
+              <td>{observaciones}</td> 
+              <td style="TEXT-ALIGN: center">{tipo}</td> 
+              <td style="TEXT-ALIGN: center">{serv_contractual}</td> 
+              <td style="TEXT-ALIGN: center">{total_unidades}</td> 
+              <td style="TEXT-ALIGN: center">{tipo_unidades}</td> 
+              <td style="TEXT-ALIGN: center">{ppmc_padre}</td> 
+              <td style="TEXT-ALIGN: center">{tipo_padre}</td> 
+              <td style="TEXT-ALIGN: center"></td> 
+              <td style="TEXT-ALIGN: center"></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr class="NoRecordsAustere4">
+              <td colspan="21">No hay registros</td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr class="FooterAustere4">
+              <td colspan="21">
+                <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                  <option selected value="">-</option>
+ {PageSize_Options} 
+                </select>
+ 
+                <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/Austere4/Images/First.gif"></a> <!-- END First_On -->
+                <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/Austere4/Images/FirstOff.gif"><!-- END First_Off -->
+                <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/Austere4/Images/Prev.gif"></a> <!-- END Prev_On -->
+                <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/Austere4/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/Austere4/Images/Next.gif"></a> <!-- END Next_On -->
+                <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/Austere4/Images/NextOff.gif"><!-- END Next_Off -->
+                <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/Austere4/Images/Last.gif"></a> <!-- END Last_On -->
+                <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/Austere4/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Grid l_detalle_medicion_apertu --><br>
+  </div>
+ 
+  <div id="4" class="tabbertab">
+    <h2>Detalle de Medición - Cierre</h2>
+ 
+    <!-- BEGIN Grid l_detalle_medicion_cierre -->
+    <table id="l_detalle_medicion_cierre" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top">
+          <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+              <td class="thAustere4"><strong>Detalle de&nbsp;Medición de Requerimientos de&nbsp;Cierre&nbsp;</strong></td> 
+              <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            </tr>
+ 
+          </table>
+ 
+          <table class="GridAustere4" cellspacing="0" cellpadding="0">
+            <tr class="RowAustere4">
+              <td colspan="25">Total de Registros:&nbsp;{l_detalle_medicion_cierre_TotalRecords}</td> 
+            </tr>
+ 
+            <tr class="CaptionAustere4">
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_contador --><span class="Sorter">Contador 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_contador"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_contador"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_contador --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_servicio_negocio --><span class="Sorter">Servicio Negocio 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_servicio_negocio"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_servicio_negocio"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_servicio_negocio --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_ppmc --><span class="Sorter">Id Ppmc 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_id_ppmc"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_id_ppmc"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_ppmc --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_estimacion --><span class="Sorter">Id Estimación 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_id_estimacion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_id_estimacion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_estimacion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_descripcion --><span class="Sorter">Descripción 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_descripcion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_descripcion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_descripcion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_cump_req_func --><span class="Sorter">Cump Req Func 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_cump_req_func"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_cump_req_func"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_cump_req_func --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_calific_req_func --><span class="Sorter">Calific Req Func 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_calific_req_func"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_calific_req_func"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_calific_req_func --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_retraso_entregables --><span class="Sorter">Retraso Entregables 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_retraso_entregables"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_retraso_entregables"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_retraso_entregables --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_dias_retraso --><span class="Sorter">Dias Retraso 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_dias_retraso"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_dias_retraso"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_dias_retraso --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_calidad_prod_term --><span class="Sorter">Calidad Prod Term 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_calidad_prod_term"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_calidad_prod_term"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_calidad_prod_term --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_total_defectos_func --><span class="Sorter">Total Defectos Func 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_total_defectos_func"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_total_defectos_func"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_total_defectos_func --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_total_defectos_docu --><span class="Sorter">Total Defectos Docu 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_total_defectos_docu"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_total_defectos_docu"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_total_defectos_docu --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_pena_contractual --><span class="Sorter">Pena Contractual 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_pena_contractual"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_pena_contractual"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_pena_contractual --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_calidad_codigo --><span class="Sorter">Calidad Código 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_calidad_codigo"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_calidad_codigo"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_calidad_codigo --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_porcentaje_cumpli --><span class="Sorter">Porcentaje Cumpli 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_porcentaje_cumpli"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_porcentaje_cumpli"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_porcentaje_cumpli --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_defectos_fugados_amb_prod --><span class="Sorter">Defectos Fugados Amb Prod 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_defectos_fugados_amb_prod"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_defectos_fugados_amb_prod"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_defectos_fugados_amb_prod --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_total_defectos_fugados --><span class="Sorter">Total Defectos Fugados 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_total_defectos_fugados"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_total_defectos_fugados"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_total_defectos_fugados --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_observaciones --><span class="Sorter">Observaciones 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_observaciones"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_observaciones"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_observaciones --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_tipo --><span class="Sorter">Tipo 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_tipo"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_tipo"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_tipo --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_serv_contractual --><span class="Sorter">Serv Contractual 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_serv_contractual"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_serv_contractual"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_serv_contractual --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_fecha_caes --><span class="Sorter">Fecha CAES 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_fecha_caes"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_fecha_caes"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_fecha_caes --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_total_unidades --><span class="Sorter">Total Unidades 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_total_unidades"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_total_unidades"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_total_unidades --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_tipo_unidades --><span class="Sorter">Tipo Unidades 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_cierreSorter_tipo_unidades"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_cierreSorter_tipo_unidades"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_tipo_unidades --></th>
+ 
+              <th scope="col"></th>
+ 
+              <th scope="col"></th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr class="RowAustere4">
+              <td style="TEXT-ALIGN: center">{contador}</td> 
+              <td>{servicio_negocio}</td> 
+              <td style="TEXT-ALIGN: center">{id_ppmc}</td> 
+              <td style="TEXT-ALIGN: center">{id_estimacion}</td> 
+              <td>{descripcion}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_cierrecump_req_func_{l_detalle_medicion_cierre:rowNumber}" alt="" src="{cump_req_func}">{lb_cierre_cump_req_func}</td> 
+              <td style="TEXT-ALIGN: center">{calific_req_func}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_cierreretraso_entregables_{l_detalle_medicion_cierre:rowNumber}" alt="" src="{retraso_entregables}">{lb_cierre_retraso_entregables}</td> 
+              <td style="TEXT-ALIGN: center">{dias_retraso}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_cierrecalidad_prod_term_{l_detalle_medicion_cierre:rowNumber}" alt="" src="{calidad_prod_term}">{lb_cierre_calidad_prod_term}</td> 
+              <td style="TEXT-ALIGN: center">{total_defectos_func}</td> 
+              <td style="TEXT-ALIGN: center">{total_defectos_docu}</td> 
+              <td style="TEXT-ALIGN: center">{pena_contractual}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_cierrecalidad_codigo_{l_detalle_medicion_cierre:rowNumber}" alt="" src="{calidad_codigo}">{lb_cierre_calidad_codigo}</td> 
+              <td style="TEXT-ALIGN: center">{porcentaje_cumpli}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_cierredefectos_fugados_amb_prod_{l_detalle_medicion_cierre:rowNumber}" alt="" src="{defectos_fugados_amb_prod}">{lb_cierre_defectos_fugados_amb_prod}</td> 
+              <td style="TEXT-ALIGN: center">{total_defectos_fugados}</td> 
+              <td>{observaciones}</td> 
+              <td style="TEXT-ALIGN: center">{tipo}</td> 
+              <td style="TEXT-ALIGN: center">{serv_contractual}</td> 
+              <td style="TEXT-ALIGN: center">{fecha_caes}</td> 
+              <td style="TEXT-ALIGN: center">{total_unidades}</td> 
+              <td style="TEXT-ALIGN: center">{tipo_unidades}</td> 
+              <td style="TEXT-ALIGN: center"></td> 
+              <td style="TEXT-ALIGN: center"></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr class="NoRecordsAustere4">
+              <td colspan="25">No hay registros</td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr class="FooterAustere4">
+              <td colspan="25">
+                <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                  <option selected value="">-</option>
+ {PageSize_Options} 
+                </select>
+ 
+                <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/Austere4/Images/First.gif"></a> <!-- END First_On -->
+                <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/Austere4/Images/FirstOff.gif"><!-- END First_Off -->
+                <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/Austere4/Images/Prev.gif"></a> <!-- END Prev_On -->
+                <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/Austere4/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/Austere4/Images/Next.gif"></a> <!-- END Next_On -->
+                <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/Austere4/Images/NextOff.gif"><!-- END Next_Off -->
+                <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/Austere4/Images/Last.gif"></a> <!-- END Last_On -->
+                <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/Austere4/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Grid l_detalle_medicion_cierre --><br>
+  </div>
+ 
+  <div id="5" class="tabbertab">
+    <h2>Detalle de Medición - Inc</h2>
+ 
+    <!-- BEGIN Grid l_detalle_medicion_inc -->
+    <table id="l_detalle_medicion_inc" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top">
+          <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+              <td class="thAustere4"><strong>&nbsp;Detalle de&nbsp;Medición de&nbsp;Incidentes</strong></td> 
+              <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            </tr>
+ 
+          </table>
+ 
+          <table class="GridAustere4" cellspacing="0" cellpadding="0">
+            <tr class="RowAustere4">
+              <td colspan="18">Total de Registros:&nbsp;{l_detalle_medicion_inc_TotalRecords}</td> 
+            </tr>
+ 
+            <tr class="CaptionAustere4">
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_contador --><span class="Sorter">Contador 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_contador"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_contador"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_contador --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_incidencia --><span class="Sorter">Id Incidencia 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_id_incidencia"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_id_incidencia"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_incidencia --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_servicio_negocio --><span class="Sorter">Servicio Negocio 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_servicio_negocio"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_servicio_negocio"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_servicio_negocio --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_nombre_producto --><span class="Sorter">Nombre Producto 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_nombre_producto"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_nombre_producto"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_nombre_producto --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_severidad --><span class="Sorter">Severidad 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_severidad"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_severidad"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_severidad --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_estado --><span class="Sorter">Estado 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_estado"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_estado"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_estado --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_nuevo --><span class="Sorter">Nuevo 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_nuevo"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_nuevo"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_nuevo --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_asignado --><span class="Sorter">Asignado 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_asignado"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_asignado"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_asignado --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_en_curso --><span class="Sorter">En Curso 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_en_curso"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_en_curso"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_en_curso --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_pendiente --><span class="Sorter">Pendiente 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_pendiente"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_pendiente"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_pendiente --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_resuelto --><span class="Sorter">Resuelto 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_resuelto"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_resuelto"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_resuelto --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_cerrado --><span class="Sorter">Cerrado 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_cerrado"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_cerrado"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_cerrado --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_fecha_entrega_avl --><span class="Sorter">Fecha Entrega Avl 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_fecha_entrega_avl"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_fecha_entrega_avl"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_fecha_entrega_avl --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_manejo_incid_tiempo_atencion --><span class="Sorter">Manejo Incid Tiempo Atención 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_manejo_incid_tiempo_atencion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_manejo_incid_tiempo_atencion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_manejo_incid_tiempo_atencion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_manejo_incid_tiempo_solu --><span class="Sorter">Manejo Incid Tiempo Solu 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_manejo_incid_tiempo_solu"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_manejo_incid_tiempo_solu"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_manejo_incid_tiempo_solu --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_observaciones --><span class="Sorter">Observaciones 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_medicion_incSorter_observaciones"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_medicion_incSorter_observaciones"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_observaciones --></th>
+ 
+              <th scope="col"></th>
+ 
+              <th scope="col"></th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr class="RowAustere4">
+              <td style="TEXT-ALIGN: center">{contador}</td> 
+              <td>{id_incidencia}</td> 
+              <td>{servicio_negocio}</td> 
+              <td>{nombre_producto}</td> 
+              <td style="TEXT-ALIGN: center">{severidad}</td> 
+              <td style="TEXT-ALIGN: center">{estado}</td> 
+              <td style="TEXT-ALIGN: center">{nuevo}</td> 
+              <td style="TEXT-ALIGN: center">{asignado}</td> 
+              <td style="TEXT-ALIGN: center">{en_curso}</td> 
+              <td style="TEXT-ALIGN: center">{pendiente}</td> 
+              <td style="TEXT-ALIGN: center">{resuelto}</td> 
+              <td style="TEXT-ALIGN: center">{cerrado}</td> 
+              <td style="TEXT-ALIGN: center">{fecha_entrega_avl}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_incmanejo_incid_tiempo_atencion_{l_detalle_medicion_inc:rowNumber}" alt="" src="{manejo_incid_tiempo_atencion}">{lb_inci_manejo_incid_tiempo_atencion}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_medicion_incmanejo_incid_tiempo_solu_{l_detalle_medicion_inc:rowNumber}" alt="" src="{manejo_incid_tiempo_solu}">{lb_inci_manejo_incid_tiempo_solu}</td> 
+              <td>{observaciones}</td> 
+              <td style="TEXT-ALIGN: center"></td> 
+              <td style="TEXT-ALIGN: center"></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr class="NoRecordsAustere4">
+              <td colspan="18">No hay registros</td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr class="FooterAustere4">
+              <td colspan="18">
+                <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                  <option selected value="">-</option>
+ {PageSize_Options} 
+                </select>
+ 
+                <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/Austere4/Images/First.gif"></a> <!-- END First_On -->
+                <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/Austere4/Images/FirstOff.gif"><!-- END First_Off -->
+                <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/Austere4/Images/Prev.gif"></a> <!-- END Prev_On -->
+                <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/Austere4/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/Austere4/Images/Next.gif"></a> <!-- END Next_On -->
+                <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/Austere4/Images/NextOff.gif"><!-- END Next_Off -->
+                <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/Austere4/Images/Last.gif"></a> <!-- END Last_On -->
+                <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/Austere4/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Grid l_detalle_medicion_inc --><br>
+  </div>
+ 
+  <div id="6" class="tabbertab">
+    <h2>Detalle Eficiencia Presupuestal</h2>
+ 
+    <!-- BEGIN Grid l_detalle_eficiencia_pres -->
+    <table id="l_detalle_eficiencia_pres" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top">
+          <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+              <td style="TEXT-ALIGN: left" class="thAustere4"><strong>Detalle de&nbsp;Eficiencia Presupuestal</strong></td> 
+              <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            </tr>
+ 
+          </table>
+ 
+          <table class="GridAustere4" cellspacing="0" cellpadding="0">
+            <tr class="RowAustere4">
+              <td colspan="10">Total de Registros:&nbsp;{l_detalle_eficiencia_pres_TotalRecords}</td> 
+            </tr>
+ 
+            <tr class="CaptionAustere4">
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_contador --><span class="Sorter">Contador 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_contador"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_contador"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_contador --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_grupo_aplicativos --><span class="Sorter">Grupo Aplicativos 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_grupo_aplicativos"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_grupo_aplicativos"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_grupo_aplicativos --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_servicios_negocio_rela --><span class="Sorter">Servicios Negocio Rela 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_servicios_negocio_rela"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_servicios_negocio_rela"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_servicios_negocio_rela --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_promedio_cfm --><span class="Sorter">Promedio Cfm 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_promedio_cfm"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_promedio_cfm"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_promedio_cfm --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_cfm_nuevo --><span class="Sorter">Cfm Nuevo 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_cfm_nuevo"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_cfm_nuevo"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_cfm_nuevo --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_result_efic_presupuestal --><span class="Sorter">Result Efic Presupuestal 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_result_efic_presupuestal"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_result_efic_presupuestal"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_result_efic_presupuestal --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_efic_presupuestal --><span class="Sorter">Efic Presupuestal 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_efic_presupuestal"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_efic_presupuestal"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_efic_presupuestal --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_observaciones --><span class="Sorter">Observaciones 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_detalle_eficiencia_presSorter_observaciones"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_detalle_eficiencia_presSorter_observaciones"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_observaciones --></th>
+ 
+              <th scope="col"></th>
+ 
+              <th scope="col"></th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr class="RowAustere4">
+              <td style="TEXT-ALIGN: center">{contador}</td> 
+              <td>{grupo_aplicativos}</td> 
+              <td>{servicios_negocio_rela}</td> 
+              <td style="TEXT-ALIGN: center">{promedio_cfm}</td> 
+              <td style="TEXT-ALIGN: center">{cfm_nuevo}</td> 
+              <td style="TEXT-ALIGN: center">{result_efic_presupuestal}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_detalle_eficiencia_presefic_presupuestal_{l_detalle_eficiencia_pres:rowNumber}" alt="" src="{efic_presupuestal}">{lb_efic_presupuestal1}</td> 
+              <td>{observaciones}</td> 
+              <td style="TEXT-ALIGN: center"></td> 
+              <td style="TEXT-ALIGN: center"></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr class="NoRecordsAustere4">
+              <td colspan="10">No hay registros</td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr class="FooterAustere4">
+              <td colspan="10">
+                <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                  <option selected value="">-</option>
+ {PageSize_Options} 
+                </select>
+ 
+                <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/Austere4/Images/First.gif"></a> <!-- END First_On -->
+                <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/Austere4/Images/FirstOff.gif"><!-- END First_Off -->
+                <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/Austere4/Images/Prev.gif"></a> <!-- END Prev_On -->
+                <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/Austere4/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/Austere4/Images/Next.gif"></a> <!-- END Next_On -->
+                <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/Austere4/Images/NextOff.gif"><!-- END Next_Off -->
+                <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/Austere4/Images/Last.gif"></a> <!-- END Last_On -->
+                <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/Austere4/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Grid l_detalle_eficiencia_pres --><br>
+  </div>
+ 
+  <div id="2" class="tabbertab">
+    <h2>Detalle RSS</h2>
+ 
+    <!-- BEGIN Grid l_calificacion_rs_AUT -->
+    <table id="l_calificacion_rs_AUT" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td valign="top">
+          <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+              <td class="thAustere4" align="left"><strong>Detalle de Requerimientos de Servicio </strong></td> 
+              <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            </tr>
+ 
+          </table>
+ 
+          <table class="GridAustere4" cellspacing="0" cellpadding="0">
+            <tr class="RowAustere4">
+              <td colspan="17">Total de Registros:&nbsp;{l_calificacion_rs_AUT_TotalRecords}</td> 
+            </tr>
+ 
+            <tr class="CaptionAustere4">
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_contador --><span class="Sorter">Contador 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_contador"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_contador"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_contador --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_servicio_cont --><span class="Sorter">Servicio Cont 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_servicio_cont"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_servicio_cont"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_servicio_cont --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_servicio_negocio --><span class="Sorter">Servicio Negocio 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_servicio_negocio"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_servicio_negocio"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_servicio_negocio --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_ppmc --><span class="Sorter">Id Ppmc 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_id_ppmc"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_id_ppmc"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_ppmc --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_id_estimacion --><span class="Sorter">Id Estimación 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_id_estimacion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_id_estimacion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_id_estimacion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_tipo --><span class="Sorter">Tipo 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_tipo"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_tipo"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_tipo --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_descripcion --><span class="Sorter">Descripción 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_descripcion"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_descripcion"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_descripcion --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_herr_est_cost --><span class="Sorter">Herr Est Cost 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_herr_est_cost"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_herr_est_cost"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_herr_est_cost --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_req_serv --><span class="Sorter">Req Serv 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_req_serv"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_req_serv"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_req_serv --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_cumpl_req_func --><span class="Sorter">Cumpl Req Func 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_cumpl_req_func"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_cumpl_req_func"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_cumpl_req_func --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_retr_entregable --><span class="Sorter">Retr Entregable 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_retr_entregable"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_retr_entregable"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_retr_entregable --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_calidad_prod_term --><span class="Sorter">Calidad Prod Term 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_calidad_prod_term"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_calidad_prod_term"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_calidad_prod_term --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_calidad_codigo --><span class="Sorter">Calidad Código 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_calidad_codigo"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_calidad_codigo"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_calidad_codigo --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_def_fug_amb_prod --><span class="Sorter">Def Fug Amb Prod 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_def_fug_amb_prod"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_def_fug_amb_prod"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_def_fug_amb_prod --></th>
+ 
+              <th scope="col">
+              <!-- BEGIN Sorter Sorter_obs_manuales --><span class="Sorter">Obs Manuales 
+              <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+              <!-- BEGIN Asc_Off --><a href="{Asc_URL}" id="l_calificacion_rs_AUTSorter_obs_manuales"><img alt="Ascendente" src="Styles/Austere4/Images/AscOff.gif"></a><!-- END Asc_Off -->
+              <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On -->
+              <!-- BEGIN Desc_Off --><a href="{Desc_URL}" id="l_calificacion_rs_AUTSorter_obs_manuales"><img alt="Descendente" src="Styles/Austere4/Images/DescOff.gif"></a><!-- END Desc_Off --></span><!-- END Sorter Sorter_obs_manuales --></th>
+ 
+              <th scope="col"></th>
+ 
+              <th scope="col"></th>
+ 
+            </tr>
+ 
+            <!-- BEGIN Row -->
+            <tr class="RowAustere4">
+              <td style="TEXT-ALIGN: center">{contador}</td> 
+              <td>{servicio_cont}</td> 
+              <td>{servicio_negocio}</td> 
+              <td style="TEXT-ALIGN: center">{id_ppmc}</td> 
+              <td style="TEXT-ALIGN: center">{id_estimacion}</td> 
+              <td style="TEXT-ALIGN: center">{tipo}</td> 
+              <td>{descripcion}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_rs_AUTherr_est_cost_{l_calificacion_rs_AUT:rowNumber}" alt="" src="{herr_est_cost}">{lb11_herr_est_cost}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_rs_AUTreq_serv_{l_calificacion_rs_AUT:rowNumber}" alt="" src="{req_serv}">{lb11_req_serv}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_rs_AUTcumpl_req_func_{l_calificacion_rs_AUT:rowNumber}" alt="" src="{cumpl_req_func}">{lb11_cumpl_req_func}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_rs_AUTretr_entregable_{l_calificacion_rs_AUT:rowNumber}" alt="" src="{retr_entregable}">{lb11_retr_entregable} </td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_rs_AUTcalidad_prod_term_{l_calificacion_rs_AUT:rowNumber}" alt="" src="{calidad_prod_term}">{lb11_calidad_prod_term}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_rs_AUTcalidad_codigo_{l_calificacion_rs_AUT:rowNumber}" alt="" src="{calidad_codigo}">{lb11_calidad_codigo}</td> 
+              <td style="TEXT-ALIGN: center"><img id="l_calificacion_rs_AUTdef_fug_amb_prod_{l_calificacion_rs_AUT:rowNumber}" alt="" src="{def_fug_amb_prod}">{lb11_def_fug_amb_prod}</td> 
+              <td>{obs_manuales}</td> 
+              <td style="TEXT-ALIGN: center"></td> 
+              <td style="TEXT-ALIGN: center"></td> 
+            </tr>
+ <!-- END Row -->
+            <!-- BEGIN NoRecords -->
+            <tr class="NoRecordsAustere4">
+              <td colspan="17">No hay registros</td> 
+            </tr>
+ <!-- END NoRecords -->
+            <tr class="FooterAustere4">
+              <td colspan="17">
+                <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+                <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+                  <option selected value="">-</option>
+ {PageSize_Options} 
+                </select>
+ 
+                <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/Austere4/Images/First.gif"></a> <!-- END First_On -->
+                <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/Austere4/Images/FirstOff.gif"><!-- END First_Off -->
+                <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/Austere4/Images/Prev.gif"></a> <!-- END Prev_On -->
+                <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/Austere4/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+                <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/Austere4/Images/Next.gif"></a> <!-- END Next_On -->
+                <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/Austere4/Images/NextOff.gif"><!-- END Next_Off -->
+                <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/Austere4/Images/Last.gif"></a> <!-- END Last_On -->
+                <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/Austere4/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+            </tr>
+ 
+          </table>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Grid l_calificacion_rs_AUT --><br>
+    <br>
+  </div>
+</div>
+<br>
+<br>
+</body>
+</html>

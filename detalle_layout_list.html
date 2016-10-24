@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+
+<!-- BEGIN Panel Head -->
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>detalle_layout</title>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+//Include Common JSFunctions @1-262290FB
+</script>
+<script src="{page:pathToRoot}ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-A87AC9EE
+</script>
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+
+//End CCS script
+</script>
+<!-- END Panel Head -->
+<!-- BEGIN Panel Content -->
+<!-- BEGIN Record detalle_layoutSearch -->
+<form id="Contentdetalle_layoutSearch" method="post" action="{Action}" name="{HTMLFormName}">
+  <h2>Buscar</h2>
+ 
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="Contentdetalle_layoutSearchErrorBlock">
+      <td colspan="2">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td><label for="Contentdetalle_layoutSearchs_id_layout">Id Layout</label></td> 
+      <td>
+        <select name="{s_id_layout_Name}" id="Contentdetalle_layoutSearchs_id_layout">
+          <option value="">Seleccionar Valor</option>
+ {s_id_layout_Options} 
+        </select>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutSearchs_nombre_columna">Nombre Columna</label></td> 
+      <td><input type="text" name="{s_nombre_columna_Name}" value="{s_nombre_columna}" maxlength="50" size="50" id="Contentdetalle_layoutSearchs_nombre_columna"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutSearchs_tipo_col">Tipo Col</label></td> 
+      <td><input type="text" name="{s_tipo_col_Name}" value="{s_tipo_col}" maxlength="50" size="50" id="Contentdetalle_layoutSearchs_tipo_col"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutSearchs_condicion1">Condicion1</label></td> 
+      <td><input type="text" name="{s_condicion1_Name}" value="{s_condicion1}" maxlength="50" size="50" id="Contentdetalle_layoutSearchs_condicion1"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutSearchs_condicion2">Condicion2</label></td> 
+      <td><input type="text" name="{s_condicion2_Name}" value="{s_condicion2}" maxlength="50" size="50" id="Contentdetalle_layoutSearchs_condicion2"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutSearchs_acepta_nulos">Acepta Nulos</label></td> 
+      <td><input type="text" name="{s_acepta_nulos_Name}" value="{s_acepta_nulos}" maxlength="2" size="2" id="Contentdetalle_layoutSearchs_acepta_nulos"></td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="2" style="text-align: right">
+        <!-- BEGIN Button Button_DoSearch --><input name="{Button_Name}" type="submit" value="Buscar" alt="Buscar" id="Contentdetalle_layoutSearchButton_DoSearch" class="Button"><!-- END Button Button_DoSearch --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record detalle_layoutSearch --><br>
+<!-- BEGIN Grid detalle_layout -->
+<h2>Detalle Layout Lista de</h2>
+ 
+<table>
+  <tr>
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_id_detalle --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_id_detalle">Id Detalle</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_id_detalle --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_nombre_layout --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_nombre_layout">Nombre Layout</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_nombre_layout --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_nombre_columna --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_nombre_columna">Nombre Columna</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_nombre_columna --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_posicion --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_posicion">Posicion</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_posicion --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_tipo_col --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_tipo_col">Tipo Col</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_tipo_col --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_condicion1 --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_condicion1">Condicion1</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_condicion1 --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_condicion2 --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_condicion2">Condicion2</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_condicion2 --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_acepta_nulos --><span class="Sorter"><a href="{Sort_URL}" id="Contentdetalle_layoutSorter_acepta_nulos">Acepta Nulos</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_acepta_nulos --></th>
+ 
+  </tr>
+ 
+  <!-- BEGIN Row -->
+  <tr>
+    <td style="text-align:right;"><a href="{id_detalle_Src}" id="Contentdetalle_layoutid_detalle_{detalle_layout:rowNumber}">{id_detalle}</a>&nbsp;</td> 
+    <td>{nombre_layout}&nbsp;</td> 
+    <td>{nombre_columna}&nbsp;</td> 
+    <td style="text-align:right;">{posicion}&nbsp;</td> 
+    <td>{tipo_col}&nbsp;</td> 
+    <td>{condicion1}&nbsp;</td> 
+    <td>{condicion2}&nbsp;</td> 
+    <td>{acepta_nulos}&nbsp;</td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td colspan="8">No hay registros</td> 
+  </tr>
+ <!-- END NoRecords -->
+  <tr>
+    <td colspan="8"><a href="{detalle_layout_Insert_Src}" id="Contentdetalle_layoutdetalle_layout_Insert">Agregar Nuevo</a>&nbsp; 
+      <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+      <select name="{FormName}PageSize" style="VERTICAL-ALIGN: middle;" data-grid-size="{FormName}">
+        <option value="">-</option>
+ {PageSize_Options} 
+      </select>
+ 
+      <!-- BEGIN First_On --><a href="{First_URL}">|&lt; </a> <!-- END First_On -->
+      <!-- BEGIN First_Off -->|&lt; <!-- END First_Off -->
+      <!-- BEGIN Prev_On --><a href="{Prev_URL}">&lt;&lt; </a> <!-- END Prev_On -->
+      <!-- BEGIN Prev_Off -->&lt;&lt; <!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+      <!-- BEGIN Next_On --><a href="{Next_URL}">&gt;&gt; </a> <!-- END Next_On -->
+      <!-- BEGIN Next_Off -->&gt;&gt; <!-- END Next_Off -->
+      <!-- BEGIN Last_On --><a href="{Last_URL}">&gt;| </a> <!-- END Last_On -->
+      <!-- BEGIN Last_Off -->&gt;| <!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+  </tr>
+</table>
+<!-- END Grid detalle_layout --><br>
+<!-- END Panel Content -->
+<!-- BEGIN Panel Menu -->{MenuIncludablePage}<!-- END Panel Menu -->
+<!-- BEGIN Panel Sidebar1 -->&nbsp;<!-- END Panel Sidebar1 -->
+<!-- BEGIN Panel HeaderSidebar -->&nbsp;<!-- END Panel HeaderSidebar -->

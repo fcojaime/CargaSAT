@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+
+<!-- BEGIN Panel Head -->
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+//Include Common JSFunctions @1-D3B5F5BF
+</script>
+<script language="JavaScript" src="ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//bind_events @1-D5AFCE8E
+function bind_events() {
+    try { MenuIncludablePage_bind_events(); } catch(e) {}
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+
+//End CCS script
+</script>
+<title>layouts</title>
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<!-- END Panel Head -->
+<!-- BEGIN Panel Content -->
+<!-- BEGIN Record layoutsSearch -->
+<form id="ContentlayoutsSearch" method="post" name="{HTMLFormName}" action="{Action}">
+  <h2>Buscar</h2>
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="ContentlayoutsSearchErrorBlock">
+      <td colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td><label for="ContentlayoutsSearchs_nombre_layout">Nombre Layout</label></td> 
+      <td><input type="text" id="ContentlayoutsSearchs_nombre_layout" value="{s_nombre_layout}" maxlength="80" size="50" name="{s_nombre_layout_Name}"></td>
+    </tr>
+ 
+    <tr>
+      <td><label for="ContentlayoutsSearchs_posicionable">Posicionable</label></td> 
+      <td><input type="text" id="ContentlayoutsSearchs_posicionable" value="{s_posicionable}" maxlength="2" size="2" name="{s_posicionable_Name}"></td>
+    </tr>
+ 
+    <tr>
+      <td><label for="ContentlayoutsSearchs_nombre_tabla_destino">Nombre Tabla Destino</label></td> 
+      <td><input type="text" id="ContentlayoutsSearchs_nombre_tabla_destino" value="{s_nombre_tabla_destino}" maxlength="50" size="50" name="{s_nombre_tabla_destino_Name}"></td>
+    </tr>
+ 
+    <tr>
+      <td><label for="ContentlayoutsSearchs_tipo_arch">Tipo Arch</label></td> 
+      <td><input type="text" id="ContentlayoutsSearchs_tipo_arch" value="{s_tipo_arch}" maxlength="5" size="5" name="{s_tipo_arch_Name}"></td>
+    </tr>
+ 
+    <tr>
+      <td style="TEXT-ALIGN: right" colspan="2">
+        <!-- BEGIN Button Button_DoSearch --><input type="submit" id="ContentlayoutsSearchButton_DoSearch" class="Button" value="Buscar" alt="Buscar" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+    </tr>
+  </table>
+</form>
+<!-- END Record layoutsSearch --><br>
+<!-- BEGIN Grid layouts -->
+<h2>Layouts Lista de</h2>
+<table>
+  <tr>
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_id_layout --><span class="Sorter"><a href="{Sort_URL}" id="ContentlayoutsSorter_id_layout">Id Layout</a> 
+    <!-- BEGIN Asc_On --><img alt="Ascendente" src="{CCS_PathToMasterPage}Images/SorterAscActive.png"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img alt="Descendente" src="{CCS_PathToMasterPage}Images/SorterDescActive.png"><!-- END Desc_On --></span><!-- END Sorter Sorter_id_layout --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_nombre_layout --><span class="Sorter"><a href="{Sort_URL}" id="ContentlayoutsSorter_nombre_layout">Nombre Layout</a> 
+    <!-- BEGIN Asc_On --><img alt="Ascendente" src="{CCS_PathToMasterPage}Images/SorterAscActive.png"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img alt="Descendente" src="{CCS_PathToMasterPage}Images/SorterDescActive.png"><!-- END Desc_On --></span><!-- END Sorter Sorter_nombre_layout --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_num_hojas --><span class="Sorter"><a href="{Sort_URL}" id="ContentlayoutsSorter_num_hojas">Num Hojas</a> 
+    <!-- BEGIN Asc_On --><img alt="Ascendente" src="{CCS_PathToMasterPage}Images/SorterAscActive.png"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img alt="Descendente" src="{CCS_PathToMasterPage}Images/SorterDescActive.png"><!-- END Desc_On --></span><!-- END Sorter Sorter_num_hojas --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_posicionable --><span class="Sorter"><a href="{Sort_URL}" id="ContentlayoutsSorter_posicionable">Posicionable</a> 
+    <!-- BEGIN Asc_On --><img alt="Ascendente" src="{CCS_PathToMasterPage}Images/SorterAscActive.png"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img alt="Descendente" src="{CCS_PathToMasterPage}Images/SorterDescActive.png"><!-- END Desc_On --></span><!-- END Sorter Sorter_posicionable --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_nombre_tabla_destino --><span class="Sorter"><a href="{Sort_URL}" id="ContentlayoutsSorter_nombre_tabla_destino">Nombre Tabla Destino</a> 
+    <!-- BEGIN Asc_On --><img alt="Ascendente" src="{CCS_PathToMasterPage}Images/SorterAscActive.png"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img alt="Descendente" src="{CCS_PathToMasterPage}Images/SorterDescActive.png"><!-- END Desc_On --></span><!-- END Sorter Sorter_nombre_tabla_destino --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_tipo_arch --><span class="Sorter"><a href="{Sort_URL}" id="ContentlayoutsSorter_tipo_arch">Tipo Arch</a> 
+    <!-- BEGIN Asc_On --><img alt="Ascendente" src="{CCS_PathToMasterPage}Images/SorterAscActive.png"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img alt="Descendente" src="{CCS_PathToMasterPage}Images/SorterDescActive.png"><!-- END Desc_On --></span><!-- END Sorter Sorter_tipo_arch --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_num_cols_descartar --><span class="Sorter"><a href="{Sort_URL}" id="ContentlayoutsSorter_num_cols_descartar">Num Cols Descartar</a> 
+    <!-- BEGIN Asc_On --><img alt="Ascendente" src="{CCS_PathToMasterPage}Images/SorterAscActive.png"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img alt="Descendente" src="{CCS_PathToMasterPage}Images/SorterDescActive.png"><!-- END Desc_On --></span><!-- END Sorter Sorter_num_cols_descartar --></th>
+  </tr>
+ 
+  <!-- BEGIN Row -->
+  <tr>
+    <td style="TEXT-ALIGN: right"><a href="{id_layout_Src}" id="Contentlayoutsid_layout_{layouts:rowNumber}">{id_layout}</a>&nbsp;</td> 
+    <td>{nombre_layout}&nbsp;</td> 
+    <td style="TEXT-ALIGN: right">{num_hojas}&nbsp;</td> 
+    <td>{posicionable}&nbsp;</td> 
+    <td>{nombre_tabla_destino}&nbsp;</td> 
+    <td>{tipo_arch}&nbsp;</td> 
+    <td style="TEXT-ALIGN: right">{num_cols_descartar}&nbsp;</td>
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td colspan="7">No hay registros</td>
+  </tr>
+  <!-- END NoRecords -->
+  <tr>
+    <td colspan="7"><a href="{layouts_Insert_Src}" id="Contentlayoutslayouts_Insert">Agregar Nuevo</a>&nbsp; 
+      <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+      <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+        <option selected value="">-</option>
+ {PageSize_Options}
+      </select>
+ 
+      <!-- BEGIN First_On --><a href="{First_URL}">|&lt;</a> <!-- END First_On -->
+      <!-- BEGIN First_Off -->|&lt; <!-- END First_Off -->
+      <!-- BEGIN Prev_On --><a href="{Prev_URL}">&lt;&lt;</a> <!-- END Prev_On -->
+      <!-- BEGIN Prev_Off -->&lt;&lt; <!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+      <!-- BEGIN Next_On --><a href="{Next_URL}">&gt;&gt;</a> <!-- END Next_On -->
+      <!-- BEGIN Next_Off -->&gt;&gt; <!-- END Next_Off -->
+      <!-- BEGIN Last_On --><a href="{Last_URL}">&gt;|</a> <!-- END Last_On -->
+      <!-- BEGIN Last_Off -->&gt;| <!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td>
+  </tr>
+</table>
+<!-- END Grid layouts --><br>
+<!-- END Panel Content -->
+<!-- BEGIN Panel Menu -->{MenuIncludablePage}<!-- END Panel Menu -->
+<!-- BEGIN Panel Sidebar1 -->&nbsp;<!-- END Panel Sidebar1 -->
+<!-- BEGIN Panel HeaderSidebar -->&nbsp;<!-- END Panel HeaderSidebar -->

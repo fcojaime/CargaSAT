@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>TableroNiveles</title>
+<meta name="GENERATOR" content="CodeCharge Studio 5.1.1.18990">
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_doctype.css">
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/jquery-ui.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+//Include Common JSFunctions @1-2504AB44
+</script>
+<script src="ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-A87AC9EE
+</script>
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+
+
+//Include Common JSFunctions @1-D3B5F5BF
+</script>
+<script language="JavaScript" src="ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//bind_events @1-BF0EB765
+function bind_events() {
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649//End CCS script
+</script>
+</head>
+<body>
+<p>
+<!-- BEGIN Grid Grid1 -->
+<table id="Grid1" class="MainTable" cellspacing="0" cellpadding="0" border="0">
+  <tr>
+    <td valign="top">
+      <table class="Header" cellspacing="0" cellpadding="0" border="0">
+        <tr>
+          <td class="HeaderLeft"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+          <td class="th"><strong>Resumen de Niveles de Servicio </strong></td> 
+          <td class="HeaderRight"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td>
+        </tr>
+      </table>
+ 
+      <table class="Grid" cellspacing="0" cellpadding="0">
+        <tr class="Caption">
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_descripcion --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_descripcion">Servicio</a></span><!-- END Sorter Sorter_descripcion --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_cumplenherr_est_cost --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_cumplenherr_est_cost">Uso de una<br>
+          Herramienta<br>
+          para Estimación<br>
+          de Costo<br>
+          y Tiempos</a></span><!-- END Sorter Sorter_cumplenherr_est_cost --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_cumplenreq_serv --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_cumplenreq_serv">Requisitos<br>
+          de Servicio</a></span><!-- END Sorter Sorter_cumplenreq_serv --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_cumplencumpl_req_func --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_cumplencumpl_req_func">Cumplimiento en<br>
+          Requisitos<br>
+          Funcionales</a></span><!-- END Sorter Sorter_cumplencumpl_req_func --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_cumplencalidad_prod_term --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_cumplencalidad_prod_term">Calidad de<br>
+          Productos<br>
+          Terminados</a></span><!-- END Sorter Sorter_cumplencalidad_prod_term --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_cumplenretr_entregable --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_cumplenretr_entregable">Retraso en<br>
+          Entregables</a></span><!-- END Sorter Sorter_cumplenretr_entregable --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_cumplencal_cod --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_cumplencal_cod">Calidad<br>
+          de Código</a></span><!-- END Sorter Sorter_cumplencal_cod --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_cumplendef_fug_amb_prod --><span class="Sorter"><a href="{Sort_URL}" id="Grid1Sorter_cumplendef_fug_amb_prod">Defectos Fugados<br>
+          al Ambiente<br>
+          Productivo</a></span><!-- END Sorter Sorter_cumplendef_fug_amb_prod --></th>
+ 
+          <th scope="col">Manejo de<br>
+          Incidentes<br>
+          Tiempo de<br>
+          Atención</th>
+ 
+          <th scope="col">Manejo de<br>
+          Incidentes<br>
+          Tiempo de<br>
+          Solución</th>
+ 
+          <th scope="col">&nbsp;Eficiencia<br>
+          Presupuestal</th>
+        </tr>
+ 
+        <!-- BEGIN Row -->
+        <tr class="Row">
+          <td>{descripcion}&nbsp;</td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgherr_est_cost_{Grid1:rowNumber}" alt="" src="{imgherr_est_cost}"><br>
+            {cumplenherr_est_cost}&nbsp;{totherr_est_cost}&nbsp;{herr_est_cost}<input type="hidden" id="Grid1meta_herr_est_cost_{Grid1:rowNumber}" value="{meta_herr_est_cost}" name="{meta_herr_est_cost_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgreq_serv_{Grid1:rowNumber}" alt="" src="{imgreq_serv}"><br>
+            {cumplenreq_serv}&nbsp;{totreq_serv}&nbsp;{req_serv}<input type="hidden" id="Grid1meta_req_serv_{Grid1:rowNumber}" value="{meta_req_serv}" name="{meta_req_serv_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgcumpl_req_func_{Grid1:rowNumber}" alt="" src="{imgcumpl_req_func}"><br>
+            {cumplencumpl_req_func}&nbsp;{totcumpl_req_func}&nbsp;{cumpl_req_func}<input type="hidden" id="Grid1meta_cumpl_req_func_{Grid1:rowNumber}" value="{meta_cumpl_req_func}" name="{meta_cumpl_req_func_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgcalidad_prod_term_{Grid1:rowNumber}" alt="" src="{imgcalidad_prod_term}"><br>
+            {cumplencalidad_prod_term}&nbsp;{totcalidad_prod_term}&nbsp;{calidad_prod_term}<input type="hidden" id="Grid1meta_calidad_prod_term_{Grid1:rowNumber}" value="{meta_calidad_prod_term}" name="{meta_calidad_prod_term_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgretr_entregable_{Grid1:rowNumber}" alt="" src="{imgretr_entregable}"><br>
+            {cumplenretr_entregable}&nbsp;{totretr_entregable}&nbsp;{retr_entregable}<input type="hidden" id="Grid1meta_retr_entregable_{Grid1:rowNumber}" value="{meta_retr_entregable}" name="{meta_retr_entregable_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgcal_cod_{Grid1:rowNumber}" alt="" src="{imgcal_cod}"><br>
+            {cumplencal_cod}&nbsp;{totcal_cod}&nbsp;{cal_cod}<input type="hidden" id="Grid1meta_cal_cod_{Grid1:rowNumber}" value="{meta_cal_cod}" name="{meta_cal_cod_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgdef_fug_amb_prod_{Grid1:rowNumber}" alt="" src="{imgdef_fug_amb_prod}"><br>
+            {cumplendef_fug_amb_prod}&nbsp;{totdef_fug_amb_prod}&nbsp;{def_fug_amb_prod}<input type="hidden" id="Grid1meta_def_fug_amb_prod_{Grid1:rowNumber}" value="{meta_def_fug_amb_prod}" name="{meta_def_fug_amb_prod_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imginc_tiempoasignacion_{Grid1:rowNumber}" alt="" src="{imginc_tiempoasignacion}"><br>
+            {cumpleninc_tiempoasignacion}&nbsp;{totinc_tiempoasignacion}&nbsp;{inc_tiempoasignacion}&nbsp;<input type="hidden" id="Grid1meta_inc_tiempoasignacion_{Grid1:rowNumber}" value="{meta_inc_tiempoasignacion}" name="{meta_inc_tiempoasignacion_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imginc_tiemposolucion_{Grid1:rowNumber}" alt="" src="{imginc_tiemposolucion}"><br>
+            {cumpleninc_tiemposolucion}&nbsp;{totinc_tiemposolucion}&nbsp;{inc_tiemposolucion}&nbsp;<input type="hidden" id="Grid1meta_inc_tiemposolucion_{Grid1:rowNumber}" value="{meta_inc_tiemposolucion}" name="{meta_inc_tiemposolucion_Name}"></td> 
+          <td style="TEXT-ALIGN: center"><img id="Grid1imgefic_presup_{Grid1:rowNumber}" alt="" src="{imgefic_presup}"><br>
+            {cumplenefic_presup}&nbsp;{totefic_presup}&nbsp;{efic_presup}&nbsp;<input type="hidden" id="Grid1meta_efic_presup_{Grid1:rowNumber}" value="{meta_efic_presup}" name="{meta_efic_presup_Name}"></td>
+        </tr>
+ <!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr class="NoRecords">
+          <td colspan="11">No hay registros</td>
+        </tr>
+        <!-- END NoRecords -->
+        <tr class="Footer">
+          <td colspan="11">
+            <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+            <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+              <option selected value="">-</option>
+ {PageSize_Options}
+            </select>
+ 
+            <!-- BEGIN First_On --><a href="{First_URL}"><img alt="{First_URL}" src="Styles/{CCS_Style}/Images/First.gif"></a> <!-- END First_On -->
+            <!-- BEGIN First_Off --><img alt="{First_URL}" src="Styles/{CCS_Style}/Images/FirstOff.gif"><!-- END First_Off -->
+            <!-- BEGIN Prev_On --><a href="{Prev_URL}"><img alt="{Prev_URL}" src="Styles/{CCS_Style}/Images/Prev.gif"></a> <!-- END Prev_On -->
+            <!-- BEGIN Prev_Off --><img alt="{Prev_URL}" src="Styles/{CCS_Style}/Images/PrevOff.gif"><!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+            <!-- BEGIN Next_On --><a href="{Next_URL}"><img alt="{Next_URL}" src="Styles/{CCS_Style}/Images/Next.gif"></a> <!-- END Next_On -->
+            <!-- BEGIN Next_Off --><img alt="{Next_URL}" src="Styles/{CCS_Style}/Images/NextOff.gif"><!-- END Next_Off -->
+            <!-- BEGIN Last_On --><a href="{Last_URL}"><img alt="{Last_URL}" src="Styles/{CCS_Style}/Images/Last.gif"></a> <!-- END Last_On -->
+            <!-- BEGIN Last_Off --><img alt="{Last_URL}" src="Styles/{CCS_Style}/Images/LastOff.gif"><!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END Grid Grid1 --><br>
+</p>
+</body>
+</html>

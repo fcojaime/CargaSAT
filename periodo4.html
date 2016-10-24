@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>periodo4</title>
+<meta name="GENERATOR" content="CodeCharge Studio 5.1.1.18990">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-2504AB44
+</script>
+<script src="ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//End Include Common JSFunctions bbb
+
+//Include User Scripts @1-FA240378
+</script>
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/ccs-jquery-ui-calendar.css">
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+//Common Script Start @1-8BFA436B
+jQuery(function ($) {
+    var features = { };
+    var actions = { };
+    var params = { };
+//End Common Script Start
+
+//Controls Selecting @1-4C4A2DD6
+    $('body').ccsBind(function() {
+        features["periodos_carga1fecha_limiteInlineDatePicker1"] = $('*:ccsControl(periodos_carga1, fecha_limite)');
+    });
+//End Controls Selecting
+
+//Feature Parameters @1-1304EA06
+    params["periodos_carga1fecha_limiteInlineDatePicker1"] = { 
+        dateFormat: "dd/MM/yyyy hh:mm",
+        isWeekend: true
+    };
+//End Feature Parameters
+
+//Feature Init @1-674B22C1
+    features["periodos_carga1fecha_limiteInlineDatePicker1"].ccsBind(function() {
+        this.ccsDateTimePicker(params["periodos_carga1fecha_limiteInlineDatePicker1"]);
+    });
+//End Feature Init
+
+//Plugin Calls @1-B6862E27
+    $('*:ccsControl(periodos_carga1, Button_Delete)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+    $('*:ccsControl(periodos_carga1, Button_Cancel)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+//End Plugin Calls
+
+//Common Script End @1-562554DE
+});
+//End Common Script End
+
+//End CCS script
+</script>
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_doctype.css">
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_Components_doctype.css">
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/jquery-ui.css">
+</head>
+<body>
+{Header} <br>
+&nbsp; 
+<!-- BEGIN Record periodos_cargaSearch -->
+<form id="periodos_cargaSearch" method="post" name="{HTMLFormName}" action="{Action}">
+  <table class="MainTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <table border="0" cellspacing="0" cellpadding="0" class="Header{CCS_Style}">
+          <tr>
+            <td class="HeaderLeft{CCS_Style}"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+            <td class="th{CCS_Style}"><strong>Buscar</strong></td> 
+            <td class="HeaderRight{CCS_Style}"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td>
+          </tr>
+        </table>
+ 
+        <table cellspacing="0" cellpadding="0" class="Record{CCS_Style}">
+          <!-- BEGIN Error -->
+          <tr id="{@error-block}" class="Error{CCS_Style}">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="Controls{CCS_Style}">
+            <td class="th{CCS_Style}"><label for="periodos_cargaSearchs_id_proveedor">CDS</label></td> 
+            <td>
+              <select id="periodos_cargaSearchs_id_proveedor" name="{s_id_proveedor_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {s_id_proveedor_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="Controls{CCS_Style}">
+            <td class="th{CCS_Style}"><label for="periodos_cargaSearchs_anio">Año</label></td> 
+            <td><input type="text" id="periodos_cargaSearchs_anio" value="{s_anio}" maxlength="5" size="5" name="{s_anio_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls{CCS_Style}">
+            <td class="th{CCS_Style}"><label for="periodos_cargaSearchs_nombre_mes">Nombre Mes</label></td> 
+            <td>
+              <select id="periodos_cargaSearchs_nombre_mes" name="{s_nombre_mes_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {s_nombre_mes_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="Bottom{CCS_Style}">
+            <td style="TEXT-ALIGN: right" colspan="2">
+              <!-- BEGIN Button Button_DoSearch --><input type="submit" id="periodos_cargaSearchButton_DoSearch" class="Button{CCS_Style}" value="Buscar" alt="Buscar" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record periodos_cargaSearch --><br>
+<!-- BEGIN Grid periodos_carga -->
+<table id="periodos_carga" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+      <table class="Header" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="HeaderLeft"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+          <td class="th"><strong>Lista de Periodos de Carga </strong></td> 
+          <td class="HeaderRight"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td>
+        </tr>
+      </table>
+ 
+      <table class="Grid" cellspacing="0" cellpadding="0">
+        <tr class="Caption">
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_id_periodo --><span class="Sorter"><a href="{Sort_URL}" id="periodos_cargaSorter_id_periodo">Id Periodo</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/{CCS_Style}/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/{CCS_Style}/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_id_periodo --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_anio --><span class="Sorter"><a href="{Sort_URL}" id="periodos_cargaSorter_anio">Anio</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/{CCS_Style}/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/{CCS_Style}/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_anio --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_nombre_mes --><span class="Sorter"><a href="{Sort_URL}" id="periodos_cargaSorter_nombre_mes">Nombre Mes</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/{CCS_Style}/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/{CCS_Style}/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_nombre_mes --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_fecha_limite --><span class="Sorter"><a href="{Sort_URL}" id="periodos_cargaSorter_fecha_limite">Fecha Limite</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/{CCS_Style}/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/{CCS_Style}/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_fecha_limite --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_num_intentos_permitidos --><span class="Sorter"><a href="{Sort_URL}" id="periodos_cargaSorter_num_intentos_permitidos">Num Intentos Permitidos</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/{CCS_Style}/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/{CCS_Style}/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_num_intentos_permitidos --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_tipo_periodo --><span class="Sorter"><a href="{Sort_URL}" id="periodos_cargaSorter_tipo_periodo">Tipo Periodo</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/{CCS_Style}/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/{CCS_Style}/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_tipo_periodo --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_id_proveedor --><span class="Sorter"><a href="{Sort_URL}" id="periodos_cargaSorter_id_proveedor">CDS</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/{CCS_Style}/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/{CCS_Style}/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_id_proveedor --></th>
+        </tr>
+ 
+        <!-- BEGIN Row -->
+        <tr class="Row">
+          <td style="TEXT-ALIGN: right"><a href="{id_periodo_Src}" id="periodos_cargaid_periodo_{periodos_carga:rowNumber}">{id_periodo}</a>&nbsp;</td> 
+          <td style="TEXT-ALIGN: right">{anio}&nbsp;</td> 
+          <td>{nombre_mes}&nbsp;</td> 
+          <td>{fecha_limite}&nbsp;</td> 
+          <td style="TEXT-ALIGN: center">{num_intentos_permitidos}&nbsp;</td> 
+          <td style="TEXT-ALIGN: center">{tipo_periodo}&nbsp;</td> 
+          <td style="TEXT-ALIGN: center">{id_proveedor}&nbsp;</td>
+        </tr>
+ <!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr class="NoRecords">
+          <td colspan="7">No hay registros</td>
+        </tr>
+        <!-- END NoRecords -->
+        <tr class="Footer">
+          <td colspan="7"><a href="{periodos_carga_Insert_Src}" id="periodos_cargaperiodos_carga_Insert">Agregar Nuevo</a>&nbsp; 
+            <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+            <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+              <option selected value="">-</option>
+ {PageSize_Options}
+            </select>
+ 
+            <!-- BEGIN First_On --><a href="{First_URL}">Inicio</a> <!-- END First_On -->
+            <!-- BEGIN First_Off -->Inicio <!-- END First_Off -->
+            <!-- BEGIN Prev_On --><a href="{Prev_URL}">Anterior</a> <!-- END Prev_On -->
+            <!-- BEGIN Prev_Off -->Anterior <!-- END Prev_Off -->&nbsp; 
+            <!-- BEGIN Pages -->
+            <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+            <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->de &nbsp;{Total_Pages}&nbsp; 
+            <!-- BEGIN Next_On --><a href="{Next_URL}">Siguiente</a> <!-- END Next_On -->
+            <!-- BEGIN Next_Off -->Siguiente <!-- END Next_Off -->
+            <!-- BEGIN Last_On --><a href="{Last_URL}">Final</a> <!-- END Last_On -->
+            <!-- BEGIN Last_Off -->Final <!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END Grid periodos_carga --><br>
+<br>
+<!-- BEGIN Record periodos_carga1 -->
+<form id="periodos_carga1" method="post" name="{HTMLFormName}" action="{Action}">
+  <table class="MainTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <table class="Header" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="HeaderLeft"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td> 
+            <td class="th"><strong>Agregar/Editar Periodos Carga </strong></td> 
+            <td class="HeaderRight"><img alt="" src="Styles/{CCS_Style}/Images/Spacer.gif"></td>
+          </tr>
+        </table>
+ 
+        <table class="Record" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr id="ErrorBlock" class="Error">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="Controls">
+            <td class="th"><label for="periodos_carga1anio">Año</label></td> 
+            <td><input type="text" id="periodos_carga1anio" value="{anio}" maxlength="5" size="5" name="{anio_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="periodos_carga1nombre_mes">Nombre Mes</label> <input type="hidden" id="periodos_carga1mes" value="{mes}" name="{mes_Name}"></td> 
+            <td>
+              <select id="periodos_carga1nombre_mes" name="{nombre_mes_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {nombre_mes_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="periodos_carga1fecha_limite">Fecha Limite</label></td> 
+            <td><input type="text" style="WIDTH: 156px; HEIGHT: 26px" id="periodos_carga1fecha_limite" value="{fecha_limite}" maxlength="100" name="{fecha_limite_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="periodos_carga1num_intentos_permitidos">Num Intentos Permitidos</label></td> 
+            <td><input type="text" id="periodos_carga1num_intentos_permitidos" value="{num_intentos_permitidos}" maxlength="5" size="5" name="{num_intentos_permitidos_Name}"></td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="periodos_carga1tipo_periodo">Tipo Periodo</label></td> 
+            <td>
+              <select id="periodos_carga1tipo_periodo" name="{tipo_periodo_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {tipo_periodo_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="Controls">
+            <td class="th"><label for="periodos_carga1id_proveedor">CDS</label></td> 
+            <td>
+              <select id="periodos_carga1id_proveedor" name="{id_proveedor_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {id_proveedor_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="Bottom">
+            <td style="TEXT-ALIGN: right" colspan="2">
+              <!-- BEGIN Button Button_Insert --><input type="submit" id="periodos_carga1Button_Insert" class="Button" value="Agregar" alt="Agregar" name="{Button_Name}"><!-- END Button Button_Insert -->
+              <!-- BEGIN Button Button_Update --><input type="submit" id="periodos_carga1Button_Update" class="Button" value="Enviar" alt="Enviar" name="{Button_Name}"><!-- END Button Button_Update -->
+              <!-- BEGIN Button Button_Delete --><input type="submit" id="periodos_carga1Button_Delete" class="Button" value="Borrar" alt="Borrar" name="{Button_Name}"><!-- END Button Button_Delete -->
+              <!-- BEGIN Button Button_Cancel --><input type="submit" id="periodos_carga1Button_Cancel" class="Button" value="Cancelar" alt="Cancelar" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record periodos_carga1 --><br>
+</body>
+</html>

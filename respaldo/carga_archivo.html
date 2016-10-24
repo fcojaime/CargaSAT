@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+
+<!-- BEGIN Panel Head -->
+<meta name="GENERATOR" content="CodeCharge Studio 5.1.1.18990">
+<title>carga_archivo</title>
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<!-- END Panel Head -->
+<!-- BEGIN Panel Content -->
+<!-- BEGIN Record NewRecord1 -->
+<form id="ContentNewRecord1" enctype="{HTMLFormEnctype}" method="post" name="{HTMLFormName}" action="{Action}">
+  <h2>Carga de Archivos Excel</h2>
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="Content{@error-block}">
+      <td colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td>Seleccione un archivo</td> 
+      <td>&nbsp; 
+        <!-- BEGIN FileUpload archivo_excel --><input type="hidden" id="ContentNewRecord1archivo_excelControlName" value="{State}" name="{ControlName}">
+        <!-- BEGIN Info -->&nbsp;{FileName}&nbsp;{FileSize}&nbsp;bytes.<!-- END Info -->
+        <!-- BEGIN Upload --><label for="ContentNewRecord1archivo_excelFileControl" style="display: none;">File upload</label><input type="file" id="ContentNewRecord1archivo_excelFileControl" name="{FileControl}"><!-- END Upload -->
+        <!-- BEGIN DeleteControl --><label for="ContentNewRecord1archivo_excelDeleteControl">Borrar</label><input type="checkbox" id="ContentNewRecord1archivo_excelDeleteControl" name="{DeleteControl}" {DeleteChecked}><!-- END DeleteControl --><!-- END FileUpload archivo_excel --></td>
+    </tr>
+ 
+    <tr>
+      <td><label for="ContentNewRecord1ListBox1">Seleccione un tipo de servicio</label></td> 
+      <td>&nbsp; 
+        <select id="ContentNewRecord1ListBox1" name="{ListBox1_Name}">
+          <option selected value="">Seleccionar Valor</option>
+          {ListBox1_Options}
+        </select>
+ </td>
+    </tr>
+ 
+    <tr>
+      <td style="TEXT-ALIGN: right" colspan="2">
+        <!-- BEGIN Button Button_Insert --><input type="submit" id="ContentNewRecord1Button_Insert" class="Button" value="Agregar" alt="Agregar" name="{Button_Name}"><!-- END Button Button_Insert -->
+        <!-- BEGIN Button Button_Update --><input type="submit" id="ContentNewRecord1Button_Update" class="Button" value="Enviar" alt="Enviar" name="{Button_Name}"><!-- END Button Button_Update -->
+        <!-- BEGIN Button Button_Delete --><input type="submit" id="ContentNewRecord1Button_Delete" class="Button" value="Borrar" alt="Borrar" name="{Button_Name}"><!-- END Button Button_Delete -->
+        <!-- BEGIN Button Button_Cancel --><input type="submit" id="ContentNewRecord1Button_Cancel" class="Button" value="Cancelar" alt="Cancelar" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+    </tr>
+  </table>
+</form>
+<!-- END Record NewRecord1 --><!-- END Panel Content -->
+<!-- BEGIN Panel Menu --><!-- END Panel Menu -->
+<!-- BEGIN Panel Sidebar1 -->&nbsp;<!-- END Panel Sidebar1 -->
+<!-- BEGIN Panel HeaderSidebar -->&nbsp;<!-- END Panel HeaderSidebar -->

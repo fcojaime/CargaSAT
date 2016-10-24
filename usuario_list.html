@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+
+<!-- BEGIN Panel Head -->
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>usuario</title>
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+
+//Include Common JSFunctions @1-262290FB
+</script>
+<script src="{page:pathToRoot}ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-A87AC9EE
+</script>
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+
+
+//Include Common JSFunctions @1-D3B5F5BF
+</script>
+<script language="JavaScript" src="ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+//End Include Common JSFunctions
+
+//bind_events @1-D5AFCE8E
+function bind_events() {
+    try { MenuIncludablePage_bind_events(); } catch(e) {}
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649//End CCS script
+</script>
+<!-- END Panel Head -->
+<!-- BEGIN Panel Content -->
+<!-- BEGIN Record usuarioSearch -->
+<form id="ContentusuarioSearch" method="post" action="{Action}" name="{HTMLFormName}">
+  <h2>Buscar</h2>
+ 
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="ContentusuarioSearchErrorBlock">
+      <td colspan="2">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td><label for="ContentusuarioSearchs_nombre_usuario">Nombre Usuario</label></td> 
+      <td><input type="text" name="{s_nombre_usuario_Name}" value="{s_nombre_usuario}" maxlength="50" size="50" id="ContentusuarioSearchs_nombre_usuario"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="ContentusuarioSearchs_usuario">Usuario</label></td> 
+      <td><input type="text" name="{s_usuario_Name}" value="{s_usuario}" maxlength="50" size="50" id="ContentusuarioSearchs_usuario"></td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="2" style="text-align: right">
+        <!-- BEGIN Button Button_DoSearch --><input name="{Button_Name}" type="submit" value="Buscar" alt="Buscar" id="ContentusuarioSearchButton_DoSearch" class="Button"><!-- END Button Button_DoSearch --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record usuarioSearch --><br>
+<!-- BEGIN Grid usuario -->
+<h2>Usuario Lista de</h2>
+ 
+<table>
+  <tr>
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_id_usuario --><span class="Sorter"><a href="{Sort_URL}" id="ContentusuarioSorter_id_usuario">Id Usuario</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_id_usuario --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_nombre_usuario --><span class="Sorter"><a href="{Sort_URL}" id="ContentusuarioSorter_nombre_usuario">Nombre Usuario</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_nombre_usuario --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_usuario --><span class="Sorter"><a href="{Sort_URL}" id="ContentusuarioSorter_usuario">Usuario</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_usuario --></th>
+ 
+    <th scope="col">
+    <!-- BEGIN Sorter Sorter_nivel --><span class="Sorter"><a href="{Sort_URL}" id="ContentusuarioSorter_nivel">Nivel</a> 
+    <!-- BEGIN Asc_On --><img src="{CCS_PathToMasterPage}Images/SorterAscActive.png" alt="Ascendente"><!-- END Asc_On -->
+    <!-- BEGIN Desc_On --><img src="{CCS_PathToMasterPage}Images/SorterDescActive.png" alt="Descendente"><!-- END Desc_On --></span><!-- END Sorter Sorter_nivel --></th>
+ 
+  </tr>
+ 
+  <!-- BEGIN Row -->
+  <tr>
+    <td style="text-align:right;"><a href="{id_usuario_Src}" id="Contentusuarioid_usuario_{usuario:rowNumber}">{id_usuario}</a>&nbsp;</td> 
+    <td>{nombre_usuario}&nbsp;</td> 
+    <td>{usuario1}&nbsp;</td> 
+    <td style="text-align:right;">{nivel}&nbsp;</td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td colspan="4">No hay registros</td> 
+  </tr>
+ <!-- END NoRecords -->
+  <tr>
+    <td colspan="4"><a href="{usuario_Insert_Src}" id="Contentusuariousuario_Insert">Agregar Nuevo</a>&nbsp; 
+      <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+      <select name="{FormName}PageSize" style="VERTICAL-ALIGN: middle;" data-grid-size="{FormName}">
+        <option value="">-</option>
+ {PageSize_Options} 
+      </select>
+ 
+      <!-- BEGIN First_On --><a href="{First_URL}">|&lt; </a> <!-- END First_On -->
+      <!-- BEGIN First_Off -->|&lt; <!-- END First_Off -->
+      <!-- BEGIN Prev_On --><a href="{Prev_URL}">&lt;&lt; </a> <!-- END Prev_On -->
+      <!-- BEGIN Prev_Off -->&lt;&lt; <!-- END Prev_Off -->&nbsp;{Page_Number} de&nbsp;{Total_Pages}&nbsp; 
+      <!-- BEGIN Next_On --><a href="{Next_URL}">&gt;&gt; </a> <!-- END Next_On -->
+      <!-- BEGIN Next_Off -->&gt;&gt; <!-- END Next_Off -->
+      <!-- BEGIN Last_On --><a href="{Last_URL}">&gt;| </a> <!-- END Last_On -->
+      <!-- BEGIN Last_Off -->&gt;| <!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td> 
+  </tr>
+</table>
+<!-- END Grid usuario --><br>
+<!-- END Panel Content -->
+<!-- BEGIN Panel Menu -->{MenuIncludablePage}<!-- END Panel Menu -->
+<!-- BEGIN Panel Sidebar1 -->&nbsp;<!-- END Panel Sidebar1 -->
+<!-- BEGIN Panel HeaderSidebar -->&nbsp;<!-- END Panel HeaderSidebar -->

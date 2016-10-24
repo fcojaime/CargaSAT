@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+
+<!-- BEGIN Panel Head -->
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Layouts</title>
+<!-- END Panel Head -->
+<!-- BEGIN Panel Content -->
+<!-- BEGIN Record layouts -->
+<form id="Contentlayouts" method="post" action="{Action}" name="{HTMLFormName}">
+  <h2>Agregar/Editar Layouts </h2>
+ 
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="ContentlayoutsErrorBlock">
+      <td colspan="2">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td><label for="Contentlayoutsnombre_layout">Nombre Layout</label></td> 
+      <td><input type="text" name="{nombre_layout_Name}" value="{nombre_layout}" maxlength="80" size="50" id="Contentlayoutsnombre_layout"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentlayoutsnum_hojas">Num Hojas</label></td> 
+      <td><input type="text" name="{num_hojas_Name}" value="{num_hojas}" maxlength="5" size="5" id="Contentlayoutsnum_hojas"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentlayoutsposicionable">Posicionable</label></td> 
+      <td><input type="text" name="{posicionable_Name}" value="{posicionable}" maxlength="2" size="2" id="Contentlayoutsposicionable"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentlayoutsnombre_tabla_destino">Nombre Tabla Destino</label></td> 
+      <td><input type="text" name="{nombre_tabla_destino_Name}" value="{nombre_tabla_destino}" maxlength="50" size="50" id="Contentlayoutsnombre_tabla_destino"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentlayoutstipo_arch">Tipo Arch</label></td> 
+      <td><input type="text" name="{tipo_arch_Name}" value="{tipo_arch}" maxlength="5" size="5" id="Contentlayoutstipo_arch"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentlayoutsnum_cols_descartar">Num Cols Descartar</label></td> 
+      <td><input type="text" name="{num_cols_descartar_Name}" value="{num_cols_descartar}" maxlength="5" size="5" id="Contentlayoutsnum_cols_descartar"></td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="2" style="text-align: right">
+        <!-- BEGIN Button Button_Insert --><input name="{Button_Name}" type="submit" value="Agregar" alt="Agregar" id="ContentlayoutsButton_Insert" class="Button"><!-- END Button Button_Insert -->
+        <!-- BEGIN Button Button_Update --><input name="{Button_Name}" type="submit" value="Enviar" alt="Enviar" id="ContentlayoutsButton_Update" class="Button"><!-- END Button Button_Update -->
+        <!-- BEGIN Button Button_Delete --><input name="{Button_Name}" type="submit" value="Borrar" alt="Borrar" id="ContentlayoutsButton_Delete" class="Button"><!-- END Button Button_Delete --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record layouts --><br>
+<!-- END Panel Content -->
+<!-- BEGIN Panel Menu -->{MenuIncludablePage}<!-- END Panel Menu -->
+<!-- BEGIN Panel Sidebar1 -->&nbsp;<!-- END Panel Sidebar1 -->
+<!-- BEGIN Panel HeaderSidebar -->&nbsp;<!-- END Panel HeaderSidebar -->

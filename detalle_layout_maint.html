@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+
+<!-- BEGIN Panel Head -->
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>Detalle Layout</title>
+<!-- END Panel Head -->
+<!-- BEGIN Panel Content -->
+<!-- BEGIN Record detalle_layout -->
+<form id="Contentdetalle_layout" method="post" action="{Action}" name="{HTMLFormName}">
+  <h2>Agregar/Editar Detalle Layout </h2>
+ 
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="Contentdetalle_layoutErrorBlock">
+      <td colspan="2">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td><label for="Contentdetalle_layoutid_layout">Id Layout</label></td> 
+      <td>
+        <select name="{id_layout_Name}" id="Contentdetalle_layoutid_layout">
+          <option value="">Seleccionar Valor</option>
+ {id_layout_Options} 
+        </select>
+ </td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutnombre_columna">Nombre Columna</label></td> 
+      <td><input type="text" name="{nombre_columna_Name}" value="{nombre_columna}" maxlength="50" size="50" id="Contentdetalle_layoutnombre_columna"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutposicion">Posicion</label></td> 
+      <td><input type="text" name="{posicion_Name}" value="{posicion}" maxlength="5" size="5" id="Contentdetalle_layoutposicion"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layouttipo_col">Tipo Col</label></td> 
+      <td><input type="text" name="{tipo_col_Name}" value="{tipo_col}" maxlength="50" size="50" id="Contentdetalle_layouttipo_col"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutcondicion1">Condicion1</label></td> 
+      <td><input type="text" name="{condicion1_Name}" value="{condicion1}" maxlength="50" size="50" id="Contentdetalle_layoutcondicion1"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutcondicion2">Condicion2</label></td> 
+      <td><input type="text" name="{condicion2_Name}" value="{condicion2}" maxlength="50" size="50" id="Contentdetalle_layoutcondicion2"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Contentdetalle_layoutacepta_nulos">Acepta Nulos</label></td> 
+      <td><input type="text" name="{acepta_nulos_Name}" value="{acepta_nulos}" maxlength="2" size="2" id="Contentdetalle_layoutacepta_nulos"></td> 
+    </tr>
+ 
+    <tr>
+      <td colspan="2" style="text-align: right">
+        <!-- BEGIN Button Button_Insert --><input name="{Button_Name}" type="submit" value="Agregar" alt="Agregar" id="Contentdetalle_layoutButton_Insert" class="Button"><!-- END Button Button_Insert -->
+        <!-- BEGIN Button Button_Update --><input name="{Button_Name}" type="submit" value="Enviar" alt="Enviar" id="Contentdetalle_layoutButton_Update" class="Button"><!-- END Button Button_Update -->
+        <!-- BEGIN Button Button_Delete --><input name="{Button_Name}" type="submit" value="Borrar" alt="Borrar" id="Contentdetalle_layoutButton_Delete" class="Button"><!-- END Button Button_Delete --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record detalle_layout --><br>
+<!-- END Panel Content -->
+<!-- BEGIN Panel Menu -->{MenuIncludablePage}<!-- END Panel Menu -->
+<!-- BEGIN Panel Sidebar1 -->&nbsp;<!-- END Panel Sidebar1 -->
+<!-- BEGIN Panel HeaderSidebar -->&nbsp;<!-- END Panel HeaderSidebar -->

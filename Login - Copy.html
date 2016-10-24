@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="Styles/Fresh/Style_doctype.css">
+<link rel="stylesheet" type="text/css" href="Styles/Fresh/jquery-ui.css">
+</head>
+<body>
+{Header}<br>
+<!-- BEGIN Record Login1 -->
+<form id="Login1" method="post" name="{HTMLFormName}" action="{Action}" style="BACKGROUND-COLOR: rgb(242,242,243)">
+  <div align="center">
+  </div>
+ 
+  <h2>Login</h2>
+ 
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="{@error-block}">
+      <td colspan="2">{Error}</td> 
+    </tr>
+ <!-- END Error -->
+    <tr>
+      <td><label for="Login1login">Login </label></td> 
+      <td><input type="text" id="Login1login" value="{login}" maxlength="100" name="{login_Name}" size="20"></td> 
+    </tr>
+ 
+    <tr>
+      <td><label for="Login1password">Password</label></td> 
+      <td><input type="password" id="Login1password" value="{password}" maxlength="100" name="{password_Name}" size="20"></td> 
+    </tr>
+ 
+    <tr>
+      <td style="TEXT-ALIGN: right" colspan="2">
+        <!-- BEGIN Button Button_DoLogin --><input type="submit" id="Login1Button_DoLogin" value="Login" alt="Login" name="{Button_Name}"><!-- END Button Button_DoLogin --></td> 
+    </tr>
+ 
+  </table>
+</form>
+<!-- END Record Login1 --></body>
+</html>
