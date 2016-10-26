@@ -59,8 +59,12 @@ function NewRecord1_Aplicar_OnClick(& $sender)
 //Custom Code @24-2A29BDB7
 // -------------------------
     // Write your own code here.
-     
-     global $Redirect;
+     //Generacion de registros para el sistema comparativo una vez que se realizo la carga correctamente
+     $conx_xls->query("exec TableroMyM_SDMA4.dbo.actualiza_comparativo_incidentes ".$NewRecord1->ListBox1->GetValue());
+     $conx_xls->query("exec TableroMyM_SDMA4.dbo.actualiza_comparativo_aperturas ".$NewRecord1->ListBox1->GetValue());
+     $conx_xls->query("exec TableroMyM_SDMA4.dbo.actualiza_comparativo_cierres ".$NewRecord1->ListBox1->GetValue());
+          
+     global $Redirect;          
      $Redirect="historico_cargas_rs2.php?s_id_periodo=".$NewRecord1->ListBox1->GetValue()."&s_opt_slas=".$NewRecord1->optsla->GetValue() ;
   
      	
@@ -460,6 +464,8 @@ function Page_BeforeShow(& $sender)
 
 //Custom Code @21-2A29BDB7
 // -------------------------
+
+  
  $nom_proveedor=CCGetSession("nom_cds");
  $NewRecord1->lnom_cds->SetValue("<font size=4><strong>CDS : ".$nom_proveedor."</strong></font>");
  

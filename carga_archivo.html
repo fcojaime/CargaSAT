@@ -103,25 +103,24 @@ jQuery(function ($) {
       <td whidth="800">
         <h1><br>
         Carga de Mediciones SAT</h1>
- </td> 
+      </td>
     </tr>
- 
   </table>
- {lnom_cds} <br>
+  {lnom_cds} <br>
   <br>
   <table>
     <!-- BEGIN Error -->
     <tr id="{@error-block}">
-      <td colspan="2">{Error}</td> 
+      <td colspan="2">{Error}</td>
     </tr>
- <!-- END Error -->
+    <!-- END Error -->
     <tr>
       <td>Seleccione un archivo</td> 
       <td>&nbsp; 
         <!-- BEGIN FileUpload archivo_excel --><input type="hidden" id="NewRecord1archivo_excelControlName" value="{State}" name="{ControlName}">
         <!-- BEGIN Info -->&nbsp;{FileName}&nbsp;{FileSize}&nbsp;bytes.<!-- END Info -->
-        <!-- BEGIN Upload --><label style="display: none;" for="NewRecord1archivo_excelFileControl">File upload</label><input type="file" id="NewRecord1archivo_excelFileControl" name="{FileControl}"><!-- END Upload -->
-        <!-- BEGIN DeleteControl --><label for="NewRecord1archivo_excelDeleteControl">Borrar</label><input type="checkbox" id="NewRecord1archivo_excelDeleteControl" name="{DeleteControl}" {DeleteChecked}><!-- END DeleteControl --><!-- END FileUpload archivo_excel --></td> 
+        <!-- BEGIN Upload --><label for="NewRecord1archivo_excelFileControl" style="display: none;">File upload</label><input type="file" id="NewRecord1archivo_excelFileControl" name="{FileControl}"><!-- END Upload -->
+        <!-- BEGIN DeleteControl --><label for="NewRecord1archivo_excelDeleteControl">Borrar</label><input type="checkbox" id="NewRecord1archivo_excelDeleteControl" name="{DeleteControl}" {DeleteChecked}><!-- END DeleteControl --><!-- END FileUpload archivo_excel --></td>
     </tr>
  
     <tr>
@@ -129,14 +128,14 @@ jQuery(function ($) {
       <td>&nbsp; 
         <select id="NewRecord1ListBox1" name="{ListBox1_Name}">
           <option selected value="">Seleccionar Valor</option>
- {ListBox1_Options} 
+          {ListBox1_Options}
         </select>
- <input type="hidden" id="NewRecord1ruta_archivo" value="{ruta_archivo}" name="{ruta_archivo_Name}"></td> 
+ <input type="hidden" id="NewRecord1ruta_archivo" value="{ruta_archivo}" name="{ruta_archivo_Name}"></td>
     </tr>
  
     <tr>
       <td style="TEXT-ALIGN: center" colspan="2">
-        <!-- BEGIN RadioButton optsla --><input type="radio" id="NewRecord1optsla_{optsla:optionNumber}" value="{Value}" name="{optsla_Name}" {Check}><label for="NewRecord1optsla_{optsla:optionNumber}">{Description}</label><!-- END RadioButton optsla -->&nbsp;&nbsp;</td> 
+        <!-- BEGIN RadioButton optsla --><input type="radio" id="NewRecord1optsla_{optsla:optionNumber}" value="{Value}" name="{optsla_Name}" {Check}><label for="NewRecord1optsla_{optsla:optionNumber}">{Description}</label><!-- END RadioButton optsla -->&nbsp;&nbsp;</td>
     </tr>
  
     <tr>
@@ -144,11 +143,10 @@ jQuery(function ($) {
         <!-- BEGIN Button Button_Insert --><input type="submit" id="NewRecord1Button_Insert" class="Button" alt="Agregar" value="Agregar" name="{Button_Name}"><!-- END Button Button_Insert -->
         <!-- BEGIN Button Button_Update --><input type="submit" id="NewRecord1Button_Update" class="Button" alt="Enviar" value="Enviar" name="{Button_Name}"><!-- END Button Button_Update -->
         <!-- BEGIN Button Button_Delete --><input type="submit" id="NewRecord1Button_Delete" class="Button" alt="Borrar" value="Borrar" name="{Button_Name}"><!-- END Button Button_Delete -->
-        <!-- BEGIN Button Button_Cancel --><input type="submit" id="NewRecord1Button_Cancel" class="Button" alt="Cancelar" value="Cancelar" name="{Button_Name}"><!-- END Button Button_Cancel --></td> 
+        <!-- BEGIN Button Button_Cancel --><input type="submit" id="NewRecord1Button_Cancel" class="Button" alt="Cancelar" value="Cancelar" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
     </tr>
- 
   </table>
- <br>
+  <br>
   <input type="hidden" id="NewRecord1id_reg_ok" value="{id_reg_ok}" name="{id_reg_ok_Name}"><br>
   <table width="80%">
     <tr>
@@ -156,22 +154,20 @@ jQuery(function ($) {
         <div id="imgcarg" style="DISPLAY: none">
           <img alt="" src="./images/cargando.gif">
         </div>
- 
-        <!-- BEGIN Image img_cargando --><img id="NewRecord1img_cargando" style="DISPLAY: none" alt="" src="{img_cargando}"><!-- END Image img_cargando --></td> 
+        <!-- BEGIN Image img_cargando --><img id="NewRecord1img_cargando" style="DISPLAY: none" alt="" src="{img_cargando}"><!-- END Image img_cargando --></td>
     </tr>
- 
   </table>
- {Label3}<br>
+  {Label3}<br>
   <div class="tabber">
     {Label1} 
   </div>
- <br>
+  <br>
   {Label2} <br>
   {Label4} 
   <div>
   </div>
- 
   <!-- BEGIN Button Aplicar --><input type="submit" id="NewRecord1Aplicar" class="Button" alt="Aplicar" value="Aplicar" name="{Button_Name}"><!-- END Button Aplicar -->
 </form>
-<!-- END Record NewRecord1 --></body>
+<!-- END Record NewRecord1 -->
+</body>
 </html>
